@@ -2,6 +2,8 @@ package com.jacaranda.utilities.pueblo;
 
 import java.util.Objects;
 
+import com.jacaranda.utilities.provincia.ProvinciaException;
+
 public class Pueblo implements Comparable<Pueblo> {
 
 	private String nombre;
@@ -83,6 +85,8 @@ public class Pueblo implements Comparable<Pueblo> {
 	}
 
 	private void setCodigo(String codigo) throws PuebloException {
+		if (codigo==null)
+			throw new PuebloException("El código no puede ser nulo");
 		if (codigo.length() < 5) {
 			throw new PuebloException("La longitud del pueblo debe ser mayor que cinco.");
 		}
