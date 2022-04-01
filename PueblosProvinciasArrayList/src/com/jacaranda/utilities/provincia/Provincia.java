@@ -1,8 +1,8 @@
 package com.jacaranda.utilities.provincia;
 
-import java.util.HashSet;
+import java.util.ArrayList;
+
 import java.util.Iterator;
-import java.util.Set;
 
 import com.jacaranda.utilities.pueblo.Pueblo;
 import com.jacaranda.utilities.pueblo.PuebloException;
@@ -14,7 +14,7 @@ public class Provincia {
 	int numeroHabitantes;
 	double rentaPerCapita;
 	double superficie;
-	private Set<Pueblo> listado;
+	private ArrayList<Pueblo> listado;
 
 	public Provincia(String nombre, String codigo) throws ProvinciaException {
 		super();
@@ -25,17 +25,16 @@ public class Provincia {
 		this.numeroHabitantes = 0;
 		this.rentaPerCapita = 0;
 		this.superficie = 0;
-		this.listado = new HashSet<>();
+		this.listado = new ArrayList<>();
 	}
 
 	private void setCodigo(String codigo) throws ProvinciaException {
-		if (codigo==null)
+		if (codigo == null)
 			throw new ProvinciaException("El código no puede ser nulo");
-		
+
 		if (codigo.length() < 5) {
 			throw new ProvinciaException("La longitud de codigo pueblo debe ser mayor que cinco.");
 		}
-		
 
 		for (int i = 0; i < codigo.length(); i++) {
 			char caracter = codigo.charAt(i);
@@ -48,7 +47,7 @@ public class Provincia {
 	private boolean existePueblo(String nombre) {
 		boolean resultado = false;
 		Iterator<Pueblo> siguiente = listado.iterator();
-		while (siguiente.hasNext() && !resultado){
+		while (siguiente.hasNext() && !resultado) {
 			Pueblo pueblo = (Pueblo) siguiente.next();
 			if (pueblo.getNombre().equalsIgnoreCase(nombre))
 				resultado = true;
@@ -61,7 +60,7 @@ public class Provincia {
 		boolean resultado = false;
 		if (nombrePueblo == null)
 			throw new ProvinciaException("El nombre del pueblo es nulo");
-		
+
 		if (codigo == null)
 			throw new ProvinciaException("El codigo del pueblo es nulo");
 		String codigoPueblo = this.codigo.concat(codigo);
@@ -95,31 +94,31 @@ public class Provincia {
 
 	public String listadoPueblos() {
 		StringBuilder resultado = new StringBuilder("Listado Nombres");
-		
+
 		Iterator<Pueblo> siguiente = listado.iterator();
-		while (siguiente.hasNext()){
+		while (siguiente.hasNext()) {
 			Pueblo pueblo = siguiente.next();
 			resultado.append(pueblo.toString() + "\n");
 		}
 		return resultado.toString();
 	}
 
-	public boolean delPueblo(String nombre) throws ProvinciaException {
-		if (nombre == null)
-			throw new ProvinciaException("Este nombre es nulo");
-		Iterator<Pueblo> siguiente = this.listado.iterator();
-		boolean encontrado = false;
-		while (siguiente.hasNext() && !encontrado) {
-			Pueblo p = siguiente.next();
-			if (p.getNombre().equalsIgnoreCase(nombre)) {
-				this.listado.remove(p);
-				encontrado = true;
-			}
-
-		}
-		return encontrado;
-
-	}
+//	public boolean delPueblo(String nombre) throws ProvinciaException {
+//		if (nombre == null)
+//			throw new ProvinciaException("Este nombre es nulo");
+//		Iterator<Pueblo> siguiente = this.listado.iterator();
+//		boolean encontrado = false;
+//		while (siguiente.hasNext() && !encontrado) {
+//			Pueblo p = siguiente.next();
+//			if (p.getNombre().equalsIgnoreCase(nombre)) {
+//				this.listado.remove(p);
+//				encontrado = true;
+//			}
+//
+//		}
+//		return encontrado;
+//
+//	}
 
 	public int getNumeroHabitantes() {
 		return numeroHabitantes;
@@ -133,7 +132,7 @@ public class Provincia {
 		while (siguiente.hasNext() && !encontrado) {
 			Pueblo p = siguiente.next();
 			if (p.getNombre().equalsIgnoreCase(nombre)) {
-				this.numeroHabitantes-=p.getNumeroHabitantes();
+				this.numeroHabitantes -= p.getNumeroHabitantes();
 				try {
 					p.setNumeroHabitantes(numeroHabitantes);
 					encontrado = true;

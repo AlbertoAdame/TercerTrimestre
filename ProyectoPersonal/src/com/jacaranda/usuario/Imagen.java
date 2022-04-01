@@ -12,7 +12,6 @@ public class Imagen {
 	public Imagen(String titulo) throws ImagenException {
 		super();
 		setTitulo(titulo);
-		;
 		this.fechaSubida = LocalDate.now();
 		this.likes = 0;
 	}
