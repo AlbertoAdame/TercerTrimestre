@@ -9,11 +9,11 @@ import com.jacaranda.utilities.pueblo.PuebloException;
 
 public class Provincia {
 
-	String nombre;
-	String codigo;
-	int numeroHabitantes;
-	double rentaPerCapita;
-	double superficie;
+	private String nombre;
+	private String codigo;
+	private int numeroHabitantes;
+	private double rentaPerCapita;
+	private double superficie;
 	private Set<Pueblo> listado;
 
 	public Provincia(String nombre, String codigo) throws ProvinciaException {
@@ -29,13 +29,12 @@ public class Provincia {
 	}
 
 	private void setCodigo(String codigo) throws ProvinciaException {
-		if (codigo==null)
+		if (codigo == null)
 			throw new ProvinciaException("El código no puede ser nulo");
-		
+
 		if (codigo.length() < 5) {
 			throw new ProvinciaException("La longitud de codigo pueblo debe ser mayor que cinco.");
 		}
-		
 
 		for (int i = 0; i < codigo.length(); i++) {
 			char caracter = codigo.charAt(i);
@@ -48,7 +47,7 @@ public class Provincia {
 	private boolean existePueblo(String nombre) {
 		boolean resultado = false;
 		Iterator<Pueblo> siguiente = listado.iterator();
-		while (siguiente.hasNext() && !resultado){
+		while (siguiente.hasNext() && !resultado) {
 			Pueblo pueblo = (Pueblo) siguiente.next();
 			if (pueblo.getNombre().equalsIgnoreCase(nombre))
 				resultado = true;
@@ -61,21 +60,24 @@ public class Provincia {
 		boolean resultado = false;
 		if (nombrePueblo == null)
 			throw new ProvinciaException("El nombre del pueblo es nulo");
-		
+
 		if (codigo == null)
 			throw new ProvinciaException("El codigo del pueblo es nulo");
-		String codigoPueblo = this.codigo.concat(codigo);
-		Pueblo p;
-		try {
-			p = new Pueblo(nombrePueblo.toUpperCase(), codigoPueblo, numeroHabitantes, rentaPerCapita, superficie);
-		} catch (PuebloException e) {
-			throw new ProvinciaException(e.getMessage());
-		}
-
 		if (existePueblo(nombrePueblo))
 			throw new ProvinciaException("Este pueblo ya existe.");
-		if (!listado.add(p))
-			throw new ProvinciaException("No se puede añadir el pueblo");
+		else {
+			String codigoPueblo = this.codigo.concat(codigo);
+			Pueblo p;
+			try {
+				p = new Pueblo(nombrePueblo.toUpperCase(), codigoPueblo, numeroHabitantes, rentaPerCapita, superficie);
+			} catch (PuebloException e) {
+				throw new ProvinciaException(e.getMessage());
+
+			}
+			if (!listado.add(p))
+				throw new ProvinciaException("No se puede añadir el pueblo");
+		}
+
 		return resultado;
 	}
 
@@ -95,9 +97,9 @@ public class Provincia {
 
 	public String listadoPueblos() {
 		StringBuilder resultado = new StringBuilder("Listado Nombres");
-		
+
 		Iterator<Pueblo> siguiente = listado.iterator();
-		while (siguiente.hasNext()){
+		while (siguiente.hasNext()) {
 			Pueblo pueblo = siguiente.next();
 			resultado.append(pueblo.toString() + "\n");
 		}
@@ -133,7 +135,7 @@ public class Provincia {
 		while (siguiente.hasNext() && !encontrado) {
 			Pueblo p = siguiente.next();
 			if (p.getNombre().equalsIgnoreCase(nombre)) {
-				this.numeroHabitantes-=p.getNumeroHabitantes();
+				this.numeroHabitantes -= p.getNumeroHabitantes();
 				try {
 					p.setNumeroHabitantes(numeroHabitantes);
 					encontrado = true;
