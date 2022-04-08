@@ -28,7 +28,7 @@ public class Empleado {
 			resultado = "P3";
 
 		else
-			resultado = "P3";
+			resultado = "P4";
 
 		return resultado;
 
