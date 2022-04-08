@@ -3,6 +3,7 @@ package com.jacaranda.palabrasEmpiezan;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 
 import com.jacaranda.palabra.Palabra;
 import com.jacaranda.palabra.PalabraException;
@@ -32,6 +33,7 @@ public class PalabrasEmpiezan {
 
 		Palabra p;
 		try {
+			
 			p = new Palabra(palabra, significado);
 
 		} catch (PalabraException e) {
@@ -63,7 +65,25 @@ public class PalabrasEmpiezan {
 
 	@Override
 	public String toString() {
-		return "Empieza por la letra " + letra + ". ";
+		return "Letra " + letra + ", Palabras: "+ palabras;
 	}
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(letra);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		PalabrasEmpiezan other = (PalabrasEmpiezan) obj;
+		return letra == other.letra;
+	}
+
+	
 }

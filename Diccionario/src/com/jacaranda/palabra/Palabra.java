@@ -10,16 +10,15 @@ public class Palabra {
 	private String significado;
 	private Set<String> significados;
 
-	public Palabra(String palabra) {
+	public Palabra(String palabra) throws PalabraException {
 		super();
-		this.palabra = palabra;
+		setPalabra(palabra);
 		this.significados = new HashSet<>();
 	}
 
-	public Palabra(String palabra, String significado) {
+	public Palabra(String palabra, String significado) throws PalabraException {
 		super();
-		this.palabra = palabra;
-
+		setPalabra(palabra);
 		this.significados = new HashSet<>();
 		this.significados.add(significado);
 	}
@@ -62,6 +61,14 @@ public class Palabra {
 
 	public String getPalabra() {
 		return palabra;
+	}
+	
+	
+
+	private void setPalabra(String palabra) throws PalabraException {
+		if(palabra==null)
+			throw new PalabraException("La palabra no puede ser nulo.");
+		this.palabra = palabra;
 	}
 
 	public Character getInicialPalabra() {
