@@ -74,7 +74,7 @@ public class Empleado {
 	}
 
 	public void setDirectivo(char directivo) throws EmpleadoException {
-		if (directivo != '+' || directivo != '-')
+		if (directivo != '+' && directivo != '-')
 			throw new EmpleadoException("Caracter no válido");
 		this.directivo = directivo;
 	}
