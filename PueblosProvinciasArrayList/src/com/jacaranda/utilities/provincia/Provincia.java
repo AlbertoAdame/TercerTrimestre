@@ -9,11 +9,11 @@ import com.jacaranda.utilities.pueblo.PuebloException;
 
 public class Provincia {
 
-	String nombre;
-	String codigo;
-	int numeroHabitantes;
-	double rentaPerCapita;
-	double superficie;
+	private String nombre;
+	private String codigo;
+	private int numeroHabitantes;
+	private double rentaPerCapita;
+	private double superficie;
 	private ArrayList<Pueblo> listado;
 
 	public Provincia(String nombre, String codigo) throws ProvinciaException {
@@ -63,18 +63,22 @@ public class Provincia {
 
 		if (codigo == null)
 			throw new ProvinciaException("El codigo del pueblo es nulo");
-		String codigoPueblo = this.codigo.concat(codigo);
-		Pueblo p;
-		try {
-			p = new Pueblo(nombrePueblo.toUpperCase(), codigoPueblo, numeroHabitantes, rentaPerCapita, superficie);
-		} catch (PuebloException e) {
-			throw new ProvinciaException(e.getMessage());
-		}
-
+		
 		if (existePueblo(nombrePueblo))
 			throw new ProvinciaException("Este pueblo ya existe.");
-		if (!listado.add(p))
-			throw new ProvinciaException("No se puede añadir el pueblo");
+		else {
+			String codigoPueblo = this.codigo.concat(codigo);
+			Pueblo p;
+			try {
+				p = new Pueblo(nombrePueblo.toUpperCase(), codigoPueblo, numeroHabitantes, rentaPerCapita, superficie);
+			} catch (PuebloException e) {
+				throw new ProvinciaException(e.getMessage());
+			}
+
+			if (!listado.add(p))
+				throw new ProvinciaException("No se puede añadir el pueblo");
+		}
+		
 		return resultado;
 	}
 

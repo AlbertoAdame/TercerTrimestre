@@ -1,6 +1,7 @@
 package com.jacaranda.palabra;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Objects;
 import java.util.Set;
 
@@ -35,6 +36,24 @@ public class Palabra {
 
 		significados.add(significado);
 
+	}
+	
+	public void delSignficado(String significado) throws PalabraException {
+		if (significado == null) {
+			throw new PalabraException("El significado es nulo.");
+		} else {
+			Iterator<String> siguiente = this.significados.iterator();
+			boolean encontrado = false;
+			while (siguiente.hasNext() && !encontrado) {
+				String s = siguiente.next();
+				if (!(s.equalsIgnoreCase(significado))) {
+					throw new PalabraException("El significado no existe.");
+				} else {
+					this.significados.remove(significado);
+					encontrado=true;
+				}
+			}
+		}
 	}
 
 	@Override

@@ -43,6 +43,7 @@ public class Diccionario {
 		return resultado;
 
 	}
+	
 
 	@Override
 	public String toString() {

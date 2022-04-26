@@ -57,9 +57,17 @@ public class Diccionario {
 
 	}
 
-//	public void addSignificado(String palabra, String significado) throws PalabrasEmpiezanException {
-//
-//	}
+	public void delPalabra(String palabra) throws DiccionarioException, PalabrasEmpiezanException {
 
-	
+		PalabrasEmpiezan p1 = new PalabrasEmpiezan(palabra.toUpperCase().charAt(0));
+		int posicion = this.diccionario.indexOf(p1);
+		if (posicion < 0) {
+			throw new DiccionarioException("No está la letra");
+		} else {
+			this.diccionario.get(posicion).delPalabra(palabra);
+
+		}
+
+	}
+
 }
