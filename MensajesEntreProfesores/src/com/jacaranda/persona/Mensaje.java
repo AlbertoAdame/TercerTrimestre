@@ -4,22 +4,21 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class Mensaje {
-	
+
 	private String remitente;
 	private String destinatario;
 	private String mensaje;
 	private LocalDateTime fechaHora;
 	private int numero;
-	private int numeroSiguiente=1;
-	
-	
+	private static int numeroSiguiente = 1;
+
 	public Mensaje(String remitente, String mensaje, String destinatario) {
 		super();
 		this.remitente = remitente;
 		this.destinatario = destinatario;
 		this.mensaje = mensaje;
 		this.fechaHora = LocalDateTime.now();
-		this.numero=numeroSiguiente++;
+		this.numero = numeroSiguiente++;
 	}
 
 	public String getRemitente() {
@@ -53,13 +52,9 @@ public class Mensaje {
 
 	@Override
 	public String toString() {
-		return "Mensaje: "+ mensaje + "De: "+ remitente + "Texto: textoMensaje\n"
-				+ " Fecha y hora: "+ fechaHora;
-				
-			
+		return "\nMensaje: " + numero + "\nDe: " + remitente + " Para: " + destinatario + "\nTexto: " + mensaje
+				+ "\nFecha y hora: " + fechaHora + "\n";
+
 	}
-	
-	
-	
-	
+
 }
