@@ -48,7 +48,7 @@ public class Web {
 
 	@Override
 	public String toString() {
-		return "\n" + url + ", " + hora +"\n";
+		return "\n" + url + ", " + hora;
 	}
 
 }

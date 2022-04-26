@@ -1,5 +1,6 @@
 package com.jacaranda.main;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 import com.jacaranda.web.Historial;
@@ -12,6 +13,19 @@ public class Main {
 
 	public static void main(String[] args) {
 		int opcion=0;
+		
+		Historial h = new Historial();
+		try {
+			h.anadirPagina("google");
+		} catch (HistorialException e1) {
+			e1.printStackTrace();
+		}
+		
+		try {
+			h.anadirPagina("facebook");
+		} catch (HistorialException e1) {
+			e1.printStackTrace();
+		}
 
 		do {
 			menu();
@@ -35,19 +49,22 @@ public class Main {
 				break;
 				
 			case 2:
-				System.out.println(h.toString());//Ver pq me imprime una coma
+				System.out.println(h.toString());
 				break;
 				
 			case 3:
-				
+				String dia=leerString("Dame el dÃ­a (yyyy-mm-dd): ");
+				LocalDate fecha = LocalDate.parse(dia);
+				System.out.println(h.consultarHistorial(fecha)); 
 				break;
 				
 			case 4:
 				h.borrarHistorial();
 				break;
+				
 
 			}
-		} while (opcion!=4);
+		} while (opcion!=5);
 		
 	}
 	
@@ -62,10 +79,11 @@ public class Main {
 	}
 	
 	public static void menu() {
-		System.out.println("1. Nueva página.\n" 
+		System.out.println("1. Nueva pï¿½gina.\n" 
 				+ "2. Consultar historial completo.\n"
-				+ "3. Consultar historial de un día.\n" 
-				+ "4. Borrar");
+				+ "3. Consultar historial de un dï¿½a.\n" 
+				+ "4. Borrar\n"
+				+ "5.Salir");
 
 	}
 }
