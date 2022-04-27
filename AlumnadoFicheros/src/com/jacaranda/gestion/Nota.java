@@ -65,7 +65,9 @@ public class Nota {
 				&& Objects.equals(modulo, other.modulo);
 	}
 	
-	
+	public String escribeFichero() {
+		return nota+ "," + fecha+ "," + alumno.getDni() + "," + modulo.getNombre();
+	}
 	
 	
 }

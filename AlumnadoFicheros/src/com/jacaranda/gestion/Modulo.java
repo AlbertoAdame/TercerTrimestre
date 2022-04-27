@@ -74,6 +74,10 @@ public class Modulo {
 				+ ", creditos=" + creditos + "]";
 	}
 		
-	
+	public String escribeFichero() {
+		return nombre + "," + codigo + "," + numHorasSemanales + "," + creditos;
+		
+
+	}
 	
 }
