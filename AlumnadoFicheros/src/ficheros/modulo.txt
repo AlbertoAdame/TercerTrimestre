@@ -1,7 +1,0 @@
-programacion,0,50,100
-
-private String nombre;
-	private int codigo;
-	private static int codigoSiguiente = 0;
-	private int numHorasSemanales;
-	private int creditos;

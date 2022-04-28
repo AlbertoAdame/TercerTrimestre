@@ -19,12 +19,13 @@ import com.jacaranda.gestion.Nota;
 
 public class Main {
 
-	public static LinkedList<Alumnado> listaAlumnos;
-	public static HashSet<Modulo> listaModulos;
-	public static ArrayList<Nota> listaNota;
+	public static LinkedList<Alumnado> listaAlumnos = new LinkedList<>();
+	public static HashSet<Modulo> listaModulos = new HashSet<>();
+	public static ArrayList<Nota> listaNota = new ArrayList<>();
 	public static Scanner teclado = new Scanner(System.in);
 
 	public static void main(String[] args) throws Exception {
+		
 		int opc;
 		leerFicheroAlumno("ficheros//alumnado.txt");
 		leerFicheroModulo("ficheros//modulo.txt");
@@ -57,7 +58,7 @@ public class Main {
 				nombre = leerString("Introduce el nombre del alumno: ");
 				dni = leerString("Introduce su dni: ");
 				int notaAlumno = leerInt("Dame la nota del examen: ");
-				String modulo = leerString("Dame el nombre del módulo: ");
+				String modulo = leerString("Dame el nombre del mï¿½dulo: ");
 
 				Modulo m = new Modulo(modulo);
 				if (!listaModulos.contains(m))
@@ -85,6 +86,12 @@ public class Main {
 				break;
 
 			case 6:
+				for (Modulo mo : listaModulos) 
+					System.out.println(mo);
+
+				break;
+				
+			case 7:
 				escribirEnFicheroAlumnado("ficheros//alumnado.txt");
 				escribirEnFicheroModulo("ficheros//modulo.txt");
 				escribirEnFicheroNota("ficheros//nota.txt");
@@ -95,7 +102,7 @@ public class Main {
 				System.out.println("Valor no vÃ¡lido");
 				break;
 			}
-		} while (opc != 6);
+		} while (opc != 7);
 
 	}
 
@@ -105,7 +112,8 @@ public class Main {
 		System.out.println("3.Registrar nota.");
 		System.out.println("4.Listar las notas de todos los alumnos.");
 		System.out.println("5.Listar todos los alumnos.");
-		System.out.println("6.Salir.");
+		System.out.println("6.Listar todos los modulos.");
+		System.out.println("7.Salir.");
 
 	}
 
@@ -180,21 +188,19 @@ public class Main {
 				String[] campos = linea.split(",");
 
 				String dni = campos[2];
-				Alumnado a = new Alumnado("pericote", dni);
+				Alumnado a = new Alumnado("kk", dni);
 				int posicion = listaAlumnos.indexOf(a);
-				if (posicion < 0) {
-					throw new Exception("El alumno no existe.");
-				} else {
+
 					a = listaAlumnos.get(posicion);
 
-					String nombreAlumno = campos[3];
+					String nombreAsignatura = campos[3];
 
 					boolean encontrado = false;
 					Modulo resultado = null;
 					Iterator<Modulo> siguiente = listaModulos.iterator();
 					while (siguiente.hasNext() && !encontrado) {
 						Modulo m1 = siguiente.next();
-						if (m1.getNombre().equals(nombreAlumno)) {
+						if (m1.getNombre().equals(nombreAsignatura)) {
 							encontrado = true;
 							resultado = m1;
 
@@ -205,7 +211,7 @@ public class Main {
 					}
 					Nota n = new Nota(Double.parseDouble(campos[0]), LocalDate.parse(campos[1]), a, resultado);
 					listaNota.add(n);
-				}
+				
 
 				// Lee otra linea
 

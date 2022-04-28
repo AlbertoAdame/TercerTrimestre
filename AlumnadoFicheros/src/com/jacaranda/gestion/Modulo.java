@@ -70,7 +70,7 @@ public class Modulo {
 
 	@Override
 	public String toString() {
-		return "Modulo [nombre=" + nombre + ", codigo=" + codigo + ", numHorasSemanales=" + numHorasSemanales
+		return  nombre + ", codigo=" + codigo + ", numHorasSemanales=" + numHorasSemanales
 				+ ", creditos=" + creditos + "]";
 	}
 		
