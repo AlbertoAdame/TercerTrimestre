@@ -55,22 +55,38 @@ public class Main {
 				break;
 
 			case 3:
-				nombre = leerString("Introduce el nombre del alumno: ");
+	
 				dni = leerString("Introduce su dni: ");
-				int notaAlumno = leerInt("Dame la nota del examen: ");
-				String modulo = leerString("Dame el nombre del m�dulo: ");
+				double notaAlumno = leerDouble("Dame la nota del examen: ");
+				LocalDate fecha = LocalDate.parse(leerString("Dame la fecha (yyyy-mm-dd): "));
+				String modulo = leerString("Dame el nombre del modulo: ");
 
-				Modulo m = new Modulo(modulo);
-				if (!listaModulos.contains(m))
-					System.out.println("Este modulo no existe.");
-				else {
-					Alumnado a = new Alumnado(nombre, dni);
-					if (listaAlumnos.contains(a)) {
-						Nota n1 = new Nota(notaAlumno, LocalDate.now(), a, m);
-						listaNota.add(n1);
+				Alumnado a = new Alumnado("kk", dni);
+				int posicion = listaAlumnos.indexOf(a);
+				if (posicion == -1) {
+					System.out.println("El alumno no existe");
+				}else {
+					
+					boolean encontrado = false;
+					Modulo resultado = null;
+					
+					Iterator<Modulo> siguiente = listaModulos.iterator();
+					while (siguiente.hasNext() && !encontrado) { 
+						resultado = siguiente.next();
+						if (resultado.getNombre().equals(modulo)) {
+							encontrado = true;
+						}
 					}
+					if (encontrado == false) {
+						System.out.println("Error el modulo no existe");
+					}else{					
+						Nota n = new Nota(notaAlumno, fecha, listaAlumnos.get(posicion), resultado);
+						listaNota.add(n);
+					}
+		
 				}
-
+							
+				System.out.println("adios");
 				break;
 
 			case 4:
@@ -184,6 +200,8 @@ public class Main {
 			while (linea != null) {
 
 				// Esto es lo que modificaremos
+				
+				
 
 				String[] campos = linea.split(",");
 
@@ -194,21 +212,19 @@ public class Main {
 					a = listaAlumnos.get(posicion);
 
 					String nombreAsignatura = campos[3];
-
+					Modulo m1 = new Modulo(nombreAsignatura);
+					
 					boolean encontrado = false;
 					Modulo resultado = null;
+					
 					Iterator<Modulo> siguiente = listaModulos.iterator();
-					while (siguiente.hasNext() && !encontrado) {
-						Modulo m1 = siguiente.next();
-						if (m1.getNombre().equals(nombreAsignatura)) {
+					while (siguiente.hasNext() && !encontrado) { //Mejor hacerlo de la otra forma
+						resultado = siguiente.next();
+						if (resultado.getNombre().equals(nombreAsignatura)) {
 							encontrado = true;
-							resultado = m1;
-
 						}
 					}
-					if (!encontrado) {
-						throw new Exception("El modulo no existe.");
-					}
+
 					Nota n = new Nota(Double.parseDouble(campos[0]), LocalDate.parse(campos[1]), a, resultado);
 					listaNota.add(n);
 				
@@ -289,6 +305,11 @@ public class Main {
 	public static int leerInt(String texto) {
 		System.out.println(texto);
 		return Integer.parseInt(teclado.nextLine());
+	}
+	
+	public static double leerDouble(String texto) {
+		System.out.println(texto);
+		return Double.parseDouble(teclado.nextLine());
 	}
 
 	public static String leerString(String texto) {
