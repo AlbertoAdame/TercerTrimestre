@@ -19,7 +19,7 @@ public class Historial {
 	
 	public boolean addSorteo(LocalDate fecha, Combinacion c) {
 		boolean resultado = true;
-		HashSet<Combinacion> valor = c;
+		HashSet<Combinacion> valor = this.ganadora.get(c);
 
 		if (valor == null) {
 			HashSet<Combinacion> combinacion = new HashSet<>();
