@@ -43,7 +43,33 @@ public class Diccionario {
 		return resultado;
 
 	}
-	
+
+	public String listarUnaPalabra(String palabra) throws DiccionarioException {
+		String resultado;
+		if (palabra == null || palabra.isBlank())
+			throw new DiccionarioException("Esta palabra no puede ser nula o estar blanco.");
+
+		if (palabras.containsKey(palabra))
+			resultado = palabra + ": " + palabras.get(palabra).toString();
+		else
+			resultado = "Esta palabra no existe.";
+		return resultado;
+	}
+
+	public String listarPalabrasEmpiezanPor(String letra) throws DiccionarioException {
+		StringBuilder resultado = new StringBuilder();
+		if (letra == null || letra.isBlank())
+			throw new DiccionarioException("La letra no puede estar en blanco.");
+
+		resultado.append("Empiezan por la letra " + letra + ":");
+		for (String siguiente : this.palabras.keySet()) {
+
+			if (siguiente.startsWith(letra))
+				resultado.append(siguiente + ", ");
+		}
+		return resultado.toString();
+
+	}
 
 	@Override
 	public String toString() {
