@@ -62,7 +62,7 @@ public class Combinacion {
 	}
 
 	public String toStringCompleto() {
-		StringBuilder resultado = new StringBuilder("Todo\n");
+		StringBuilder resultado = new StringBuilder(" ");
 
 		Iterator<Integer> siguienteDos = numeros.iterator();
 		while (siguienteDos.hasNext()) {
@@ -73,7 +73,7 @@ public class Combinacion {
 		Iterator<Integer> siguiente = estrellas.iterator();
 		while (siguiente.hasNext()) {
 			Integer i = siguiente.next();
-			resultado.append(i + "-");
+			resultado.append(i + "-" );
 
 		}
 
