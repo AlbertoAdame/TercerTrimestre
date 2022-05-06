@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import elementos.ElementType;
-import elementos.JugadorException;
 import elementos.PlayerType;
+import elementosTests.JugadorException;
 import logicaJuego.Constantes;
 import logicaJuego.Juego;
 import logicaJuego.JuegoException;

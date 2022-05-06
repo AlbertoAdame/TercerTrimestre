@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
-import elementos.*;
+import elementos.Coordenada;
+import elementos.Element;
+import elementos.ElementType;
+import elementos.Jugador;
+import elementosTests.*;
 
 public class Juego {
 

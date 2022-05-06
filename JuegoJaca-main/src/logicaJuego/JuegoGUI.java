@@ -16,8 +16,8 @@ import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 
 import elementos.Coordenada;
-import elementos.JugadorException;
 import elementos.PlayerType;
+import elementosTests.JugadorException;
 
 public class JuegoGUI extends Juego implements ActionListener {
 
