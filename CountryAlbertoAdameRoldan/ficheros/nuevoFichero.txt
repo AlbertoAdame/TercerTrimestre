@@ -1,0 +1,545 @@
+Pais: Afghanistan
+CountryId: 1
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Algeria
+CountryId: 2
+NumeroCiudades: 3
+NumeroDirecciones: 3
+
+Pais: American Samoa
+CountryId: 3
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Angola
+CountryId: 4
+NumeroCiudades: 2
+NumeroDirecciones: 1
+
+Pais: Anguilla
+CountryId: 5
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Argentina
+CountryId: 6
+NumeroCiudades: 13
+NumeroDirecciones: 10
+
+Pais: Armenia
+CountryId: 7
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Australia
+CountryId: 8
+NumeroCiudades: 1
+NumeroDirecciones: 2
+
+Pais: Austria
+CountryId: 9
+NumeroCiudades: 3
+NumeroDirecciones: 3
+
+Pais: Azerbaijan
+CountryId: 10
+NumeroCiudades: 2
+NumeroDirecciones: 2
+
+Pais: Bahrain
+CountryId: 11
+NumeroCiudades: 1
+NumeroDirecciones: 0
+
+Pais: Bangladesh
+CountryId: 12
+NumeroCiudades: 3
+NumeroDirecciones: 3
+
+Pais: Belarus
+CountryId: 13
+NumeroCiudades: 2
+NumeroDirecciones: 1
+
+Pais: Bolivia
+CountryId: 14
+NumeroCiudades: 2
+NumeroDirecciones: 2
+
+Pais: Brazil
+CountryId: 15
+NumeroCiudades: 28
+NumeroDirecciones: 25
+
+Pais: Brunei
+CountryId: 16
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Bulgaria
+CountryId: 17
+NumeroCiudades: 2
+NumeroDirecciones: 1
+
+Pais: Cambodia
+CountryId: 18
+NumeroCiudades: 2
+NumeroDirecciones: 1
+
+Pais: Cameroon
+CountryId: 19
+NumeroCiudades: 2
+NumeroDirecciones: 2
+
+Pais: Canada
+CountryId: 20
+NumeroCiudades: 7
+NumeroDirecciones: 6
+
+Pais: Chad
+CountryId: 21
+NumeroCiudades: 1
+NumeroDirecciones: 0
+
+Pais: Chile
+CountryId: 22
+NumeroCiudades: 3
+NumeroDirecciones: 2
+
+Pais: China
+CountryId: 23
+NumeroCiudades: 53
+NumeroDirecciones: 35
+
+Pais: Colombia
+CountryId: 24
+NumeroCiudades: 6
+NumeroDirecciones: 5
+
+Pais: Congo
+CountryId: 25
+NumeroCiudades: 2
+NumeroDirecciones: 2
+
+Pais: Czech Republic
+CountryId: 26
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Dominican Republic
+CountryId: 27
+NumeroCiudades: 3
+NumeroDirecciones: 3
+
+Pais: Ecuador
+CountryId: 28
+NumeroCiudades: 3
+NumeroDirecciones: 1
+
+Pais: Egypt
+CountryId: 29
+NumeroCiudades: 6
+NumeroDirecciones: 4
+
+Pais: Estonia
+CountryId: 30
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Ethiopia
+CountryId: 31
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Faroe Islands
+CountryId: 32
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Finland
+CountryId: 33
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: France
+CountryId: 34
+NumeroCiudades: 4
+NumeroDirecciones: 4
+
+Pais: French Guiana
+CountryId: 35
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: French Polynesia
+CountryId: 36
+NumeroCiudades: 2
+NumeroDirecciones: 2
+
+Pais: Gambia
+CountryId: 37
+NumeroCiudades: 1
+NumeroDirecciones: 0
+
+Pais: Germany
+CountryId: 38
+NumeroCiudades: 7
+NumeroDirecciones: 7
+
+Pais: Greece
+CountryId: 39
+NumeroCiudades: 2
+NumeroDirecciones: 1
+
+Pais: Greenland
+CountryId: 40
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Holy See Vatican City State
+CountryId: 41
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Hong Kong
+CountryId: 42
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Hungary
+CountryId: 43
+NumeroCiudades: 1
+NumeroDirecciones: 0
+
+Pais: India
+CountryId: 44
+NumeroCiudades: 60
+NumeroDirecciones: 53
+
+Pais: Indonesia
+CountryId: 45
+NumeroCiudades: 14
+NumeroDirecciones: 9
+
+Pais: Iran
+CountryId: 46
+NumeroCiudades: 8
+NumeroDirecciones: 8
+
+Pais: Iraq
+CountryId: 47
+NumeroCiudades: 1
+NumeroDirecciones: 0
+
+Pais: Israel
+CountryId: 48
+NumeroCiudades: 4
+NumeroDirecciones: 3
+
+Pais: Italy
+CountryId: 49
+NumeroCiudades: 7
+NumeroDirecciones: 4
+
+Pais: Japan
+CountryId: 50
+NumeroCiudades: 31
+NumeroDirecciones: 25
+
+Pais: Kazakstan
+CountryId: 51
+NumeroCiudades: 2
+NumeroDirecciones: 1
+
+Pais: Kenya
+CountryId: 52
+NumeroCiudades: 2
+NumeroDirecciones: 2
+
+Pais: Kuwait
+CountryId: 53
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Latvia
+CountryId: 54
+NumeroCiudades: 2
+NumeroDirecciones: 2
+
+Pais: Liechtenstein
+CountryId: 55
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Lithuania
+CountryId: 56
+NumeroCiudades: 1
+NumeroDirecciones: 0
+
+Pais: Madagascar
+CountryId: 57
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Malawi
+CountryId: 58
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Malaysia
+CountryId: 59
+NumeroCiudades: 3
+NumeroDirecciones: 3
+
+Pais: Mexico
+CountryId: 60
+NumeroCiudades: 30
+NumeroDirecciones: 21
+
+Pais: Moldova
+CountryId: 61
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Morocco
+CountryId: 62
+NumeroCiudades: 3
+NumeroDirecciones: 2
+
+Pais: Mozambique
+CountryId: 63
+NumeroCiudades: 3
+NumeroDirecciones: 3
+
+Pais: Myanmar
+CountryId: 64
+NumeroCiudades: 2
+NumeroDirecciones: 2
+
+Pais: Nauru
+CountryId: 65
+NumeroCiudades: 1
+NumeroDirecciones: 0
+
+Pais: Nepal
+CountryId: 66
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Netherlands
+CountryId: 67
+NumeroCiudades: 5
+NumeroDirecciones: 4
+
+Pais: New Zealand
+CountryId: 68
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Nigeria
+CountryId: 69
+NumeroCiudades: 13
+NumeroDirecciones: 12
+
+Pais: North Korea
+CountryId: 70
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Oman
+CountryId: 71
+NumeroCiudades: 2
+NumeroDirecciones: 1
+
+Pais: Pakistan
+CountryId: 72
+NumeroCiudades: 5
+NumeroDirecciones: 5
+
+Pais: Paraguay
+CountryId: 73
+NumeroCiudades: 3
+NumeroDirecciones: 3
+
+Pais: Peru
+CountryId: 74
+NumeroCiudades: 4
+NumeroDirecciones: 2
+
+Pais: Philippines
+CountryId: 75
+NumeroCiudades: 20
+NumeroDirecciones: 16
+
+Pais: Poland
+CountryId: 76
+NumeroCiudades: 8
+NumeroDirecciones: 4
+
+Pais: Puerto Rico
+CountryId: 77
+NumeroCiudades: 2
+NumeroDirecciones: 2
+
+Pais: Romania
+CountryId: 78
+NumeroCiudades: 2
+NumeroDirecciones: 1
+
+Pais: Runion
+CountryId: 79
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Russian Federation
+CountryId: 80
+NumeroCiudades: 28
+NumeroDirecciones: 25
+
+Pais: Saint Vincent and the Grenadines
+CountryId: 81
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Saudi Arabia
+CountryId: 82
+NumeroCiudades: 5
+NumeroDirecciones: 5
+
+Pais: Senegal
+CountryId: 83
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Slovakia
+CountryId: 84
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: South Africa
+CountryId: 85
+NumeroCiudades: 11
+NumeroDirecciones: 10
+
+Pais: South Korea
+CountryId: 86
+NumeroCiudades: 5
+NumeroDirecciones: 4
+
+Pais: Spain
+CountryId: 87
+NumeroCiudades: 5
+NumeroDirecciones: 4
+
+Pais: Sri Lanka
+CountryId: 88
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Sudan
+CountryId: 89
+NumeroCiudades: 2
+NumeroDirecciones: 2
+
+Pais: Sweden
+CountryId: 90
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Switzerland
+CountryId: 91
+NumeroCiudades: 3
+NumeroDirecciones: 2
+
+Pais: Taiwan
+CountryId: 92
+NumeroCiudades: 10
+NumeroDirecciones: 6
+
+Pais: Tanzania
+CountryId: 93
+NumeroCiudades: 3
+NumeroDirecciones: 2
+
+Pais: Thailand
+CountryId: 94
+NumeroCiudades: 3
+NumeroDirecciones: 3
+
+Pais: Tonga
+CountryId: 95
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Tunisia
+CountryId: 96
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Turkey
+CountryId: 97
+NumeroCiudades: 15
+NumeroDirecciones: 9
+
+Pais: Turkmenistan
+CountryId: 98
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Tuvalu
+CountryId: 99
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Ukraine
+CountryId: 100
+NumeroCiudades: 6
+NumeroDirecciones: 4
+
+Pais: United Arab Emirates
+CountryId: 101
+NumeroCiudades: 3
+NumeroDirecciones: 3
+
+Pais: United Kingdom
+CountryId: 102
+NumeroCiudades: 8
+NumeroDirecciones: 4
+
+Pais: United States
+CountryId: 103
+NumeroCiudades: 35
+NumeroDirecciones: 30
+
+Pais: Venezuela
+CountryId: 104
+NumeroCiudades: 7
+NumeroDirecciones: 5
+
+Pais: Vietnam
+CountryId: 105
+NumeroCiudades: 6
+NumeroDirecciones: 3
+
+Pais: Virgin Islands
+CountryId: 106
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
+Pais: Yemen
+CountryId: 107
+NumeroCiudades: 4
+NumeroDirecciones: 4
+
+Pais: Yugoslavia
+CountryId: 108
+NumeroCiudades: 2
+NumeroDirecciones: 1
+
+Pais: Zambia
+CountryId: 109
+NumeroCiudades: 1
+NumeroDirecciones: 1
+
