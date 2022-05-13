@@ -1,13 +1,12 @@
 package com.jacaranda.city;
 
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
 import com.jacaranda.address.Address;
 
-public class City {
+public class City implements Comparable<City> {
 
 	private String city;
 	private int cityId;
@@ -58,6 +57,24 @@ public class City {
 	}
 
 	public String escribirFichero() {
-		return city + ": " + direcciones.size() + "\n";
+		return this.city + ": " + direcciones.size() + "\n";
+	}
+
+	@Override
+	public int compareTo(City o) {
+		int resultado =o.direcciones.size()-this.direcciones.size();
+		if(resultado==0)
+			resultado=this.city.compareTo(o.city);
+		return resultado;
+	}
+	
+	public String escribirDirecciones() {
+		StringBuilder resultado = new StringBuilder();
+		String todo;
+		for(Address a : direcciones) {
+			resultado.append( a.getAddress() + "  ");
+		}
+		todo=("Ciudad: "+ this.getCity() + " Direcciones: " + resultado + "\n");
+		return todo;
 	}
 }

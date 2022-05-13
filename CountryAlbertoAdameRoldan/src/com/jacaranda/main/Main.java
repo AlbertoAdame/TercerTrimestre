@@ -25,14 +25,13 @@ public class Main {
 
 	public static void main(String[] args) throws CountryException, ExceptionCity {
 
-		
 		leerFicheroCountry("ficheros//country.txt");
 //		System.out.println(paises.toString());
 		leerFicheroCity("ficheros//city.txt");
 		leerFicheroAddress("ficheros//address2.txt");
 		escribirFichero("ficheros//nuevoFichero.txt");
-		
-		
+		escribirFicheroCiudades("ficheros//todaInfo.txt");
+
 	}
 
 	public static void leerFicheroCountry(String nombreFichero) {
@@ -45,7 +44,7 @@ public class Main {
 			while (linea != null) {
 
 				String[] campos = linea.split(",");
-				Country c = new Country(campos[1], Integer.parseInt(campos[0]) );
+				Country c = new Country(campos[1], Integer.parseInt(campos[0]));
 				paises.add(c);
 
 				linea = filtroLectura.readLine();
@@ -72,8 +71,9 @@ public class Main {
 
 				String[] campos = linea.split(",");
 				City c = new City(campos[1], Integer.parseInt(campos[0]));
-				Country c1 = new Country("", Integer.parseInt(campos[2]));// es mas óptimo esto? o crear un nuevo constructor solo con el
-														// id?
+				Country c1 = new Country("", Integer.parseInt(campos[2]));// es mas óptimo esto? o crear un nuevo
+																			// constructor solo con el
+																			// id?
 				if (paises.contains(c1)) {
 					paises.get(paises.indexOf(c1)).addCiudad(c);
 				}
@@ -102,18 +102,19 @@ public class Main {
 				boolean encontrado = false;
 				String[] campos = linea.split(",");
 				Address a = new Address(campos[1], Integer.parseInt(campos[0]));
-				int idCity=Integer.parseInt(campos[4]);
+				int idCity = Integer.parseInt(campos[4]);
 
 				Iterator<Country> siguiente = paises.iterator();
-				while (siguiente.hasNext() && !encontrado){
-					Country c=siguiente.next();
-					if(c.encontrarCiudad(idCity)!=null) {
-						encontrado=true;
-						City ciudad =c.encontrarCiudad(idCity);
+				while (siguiente.hasNext() && !encontrado) {
+					Country c = siguiente.next();
+					if (c.encontrarCiudad(idCity) != null) {
+						encontrado = true;
+						City ciudad = c.encontrarCiudad(idCity);
 						ciudad.addAddress(a);
 					}
-						
-				}if(!encontrado)
+
+				}
+				if (!encontrado)
 					System.out.println("No se ha encontrado la ciudad");
 
 				linea = filtroLectura.readLine();
@@ -128,22 +129,34 @@ public class Main {
 		}
 
 	}
-	
-	
+
 	private static void escribirFichero(String nombre) {
-		String cadena;
 		try {
-		FileWriter flujoEscritura=new FileWriter(nombre);
-		PrintWriter filtroEscritura=new PrintWriter(flujoEscritura);
-		for (Country c : paises ) {
-			filtroEscritura.println(c.escribirFichero());
-		}
-		filtroEscritura.close();
-		flujoEscritura.close();
+			FileWriter flujoEscritura = new FileWriter(nombre);
+			PrintWriter filtroEscritura = new PrintWriter(flujoEscritura);
+			for (Country c : paises) {
+				filtroEscritura.println(c.escribirFichero());
+			}
+			filtroEscritura.close();
+			flujoEscritura.close();
 		} catch (IOException e) {
-		System.out.println(e.getMessage());
+			System.out.println(e.getMessage());
 		}
+	}
+	
+	private static void escribirFicheroCiudades(String nombre) {
+		try {
+			FileWriter flujoEscritura = new FileWriter(nombre);
+			PrintWriter filtroEscritura = new PrintWriter(flujoEscritura);
+			for (Country c : paises) {
+				filtroEscritura.println(c.escribirCiudades());
+			}
+			filtroEscritura.close();
+			flujoEscritura.close();
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
 		}
+	}
 
 	public static int leerInt(String texto) {
 		System.out.println(texto);
