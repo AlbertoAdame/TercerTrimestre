@@ -1,5 +1,6 @@
 package com.jacaranda.country;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -19,8 +20,7 @@ public class Country {
 		super();
 		this.country = country;
 		this.countryId = countryId;
-		this.ciudades = new LinkedList<>();// utilizaremos linkedList, pq arrayList renta cuando hay muchas cosas qeu
-											// borrar, y aqui no borraremos
+		this.ciudades = new ArrayList<>();// utilizaremos arrayList, pq linkedList renta cuando hay muchas cosas que borrar, y aqui no borraremos
 	}
 
 	public void addCiudad(City ciudad) throws CountryException {
@@ -40,9 +40,6 @@ public class Country {
 		return countryId;
 	}
 
-	public List<City> getCiudades() {
-		return ciudades;
-	}
 
 	@Override
 	public int hashCode() {
@@ -96,6 +93,9 @@ public class Country {
 	public String escribirCiudades() {
 		StringBuilder resultado= new StringBuilder();
 		String todo;
+		
+		Collections.sort(ciudades);
+		
 		for(City c: ciudades) {
 			resultado.append(c.escribirDirecciones());
 		}

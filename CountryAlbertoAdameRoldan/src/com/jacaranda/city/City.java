@@ -1,6 +1,6 @@
 package com.jacaranda.city;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -17,7 +17,7 @@ public class City implements Comparable<City> {
 		this.city = city;
 		this.cityId = cityId;
 		
-		this.direcciones = new LinkedList<>();// utilizaremos linkedList, pq arrayList renta cuando hay muchas cosas qeu borrar, y aqui no borraremos
+		this.direcciones = new ArrayList<>();// utilizaremos arrayList, pq linkedList renta cuando hay muchas cosas que borrar, y aqui no borraremos
 	}
 
 	public void addAddress(Address direccion) throws ExceptionCity {

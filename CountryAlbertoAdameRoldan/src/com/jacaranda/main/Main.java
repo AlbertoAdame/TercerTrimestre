@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -20,8 +21,7 @@ import com.jacaranda.country.CountryException;
 public class Main {
 
 	public static Scanner teclado = new Scanner(System.in);
-	public static List<Country> paises = new LinkedList<>();// // utilizaremos linkedList, pq arrayList renta cuando hay
-															// muchas cosas que borrar, y aqui no borraremos
+	public static List<Country> paises = new ArrayList<>();// utilizaremos arrayList, pq linkedList renta cuando hay muchas cosas que borrar, y aqui no borraremos
 
 	public static void main(String[] args) throws CountryException, ExceptionCity {
 
