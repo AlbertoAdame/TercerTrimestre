@@ -46,7 +46,7 @@ public class Coordenada {
 	
 	public boolean goLeft() {
 		boolean resultado=false;
-		if(this.x!=Constantes.TAMANNO) {
+		if(this.x!=0) {
 			this.x--;
 			resultado=true;
 		}
@@ -56,7 +56,7 @@ public class Coordenada {
 	public boolean goUp() {
 		
 		boolean resultado=false;
-		if(this.y!=Constantes.TAMANNO) {
+		if(this.y!=0) {
 			this.y--;
 			resultado=true;
 		}

@@ -13,6 +13,76 @@ public class Juego {
 	private int jugadorJuega;
 	private int dado; // Dado para ver los movimientos del jugador que juega
 
+	public Juego(PlayerType[] jugadores) {
+		super();
+		this.tablero = new HashMap<>();
+		this.coordenadaJugadores = new ArrayList<>();
+
+//		for (int i = 0; i < 4; i++) {
+//			crearJugador(jugadores(i));
+//		}
+//		this.dado = dado;
+	}
+
+	private void crearTable() {
+		crearRocas();
+		crearDinero();
+		crearGemas();
+		crearPociones();
+
+	}
+	
+	private void crearRocas() {
+		int contador = 0;
+		while (contador != Constantes.NUM_ROCAS) {
+			Coordenada coordenada = new Coordenada();
+			if (!tablero.containsKey(coordenada)) {
+				Element roca = new Element(ElementType.ROCA);
+				tablero.put(coordenada, roca);
+				contador++;
+			} 
+
+		}
+	}
+
+	private void crearGemas() {
+		int contador = 0;
+		while (contador != Constantes.NUM_GEMAS) {
+			Coordenada coordenada = new Coordenada();
+			if (!tablero.containsKey(coordenada)) {
+				Element gema = new Element(ElementType.GEMA);
+				tablero.put(coordenada, gema);
+				contador++;
+			} 
+
+		}
+	}
+
+	private void crearPociones() {
+		int contador = 0;
+		while (contador != Constantes.NUM_POCIONES) {
+			Coordenada coordenada = new Coordenada();
+			if (!tablero.containsKey(coordenada)) {
+				Element pocion = new Element(ElementType.POCION);
+				tablero.put(coordenada, pocion);
+				contador++;
+			}
+
+		}
+	}
+	
+	private void crearDinero() {
+		int contador = 0;
+		while (contador != Constantes.NUM_DINERO) {
+			Coordenada coordenada = new Coordenada();
+			if (!tablero.containsKey(coordenada)) {
+				Element dinero = new Element(ElementType.DINERO);
+				tablero.put(coordenada, dinero);
+				contador++;
+			}
+
+		}
+	}
 
 	/**
 	 * Escribe el tablero en formato no gráfico. Devuelve el string con la
@@ -44,7 +114,6 @@ public class Juego {
 		return resul.toString();
 	}
 
-
 	/**
 	 * Simplemente escribe una barra en pantalla
 	 * 
@@ -59,7 +128,6 @@ public class Juego {
 		resul.append("\n");
 		return resul.toString();
 	}
-
 
 	/**
 	 * Mover el jugador
@@ -155,5 +223,4 @@ public class Juego {
 		return resul;
 	}
 
-	
 }
