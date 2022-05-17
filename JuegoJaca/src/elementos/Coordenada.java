@@ -8,6 +8,7 @@ public class Coordenada {
 	
 	private int x;
 	private int y;
+	public Coordenada clone;
 	
 	public Coordenada() {
 		super();

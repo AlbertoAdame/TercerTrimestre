@@ -24,14 +24,14 @@ public class Juego {
 //		this.dado = dado;
 	}
 
-	private void crearTable() {
+	private void crearTablero() {
 		crearRocas();
 		crearDinero();
 		crearGemas();
 		crearPociones();
 
 	}
-	
+
 	private void crearRocas() {
 		int contador = 0;
 		while (contador != Constantes.NUM_ROCAS) {
@@ -40,7 +40,7 @@ public class Juego {
 				Element roca = new Element(ElementType.ROCA);
 				tablero.put(coordenada, roca);
 				contador++;
-			} 
+			}
 
 		}
 	}
@@ -53,7 +53,7 @@ public class Juego {
 				Element gema = new Element(ElementType.GEMA);
 				tablero.put(coordenada, gema);
 				contador++;
-			} 
+			}
 
 		}
 	}
@@ -70,7 +70,7 @@ public class Juego {
 
 		}
 	}
-	
+
 	private void crearDinero() {
 		int contador = 0;
 		while (contador != Constantes.NUM_DINERO) {
@@ -114,6 +114,25 @@ public class Juego {
 		return resul.toString();
 	}
 
+	public boolean isTerminado() {
+		boolean terminado = false;
+		if (coordenadaJugadores.size() == 1) {
+			terminado = true;
+		} else {
+			Iterator<Coordenada> siguiente = coordenadaJugadores.iterator();
+			while (siguiente.hasNext() && !terminado) {
+				Coordenada c = siguiente.next();
+				Jugador j = (Jugador) tablero.get(c);
+				if (j.getDinero() == Constantes.NUM_DINERO)
+					terminado = true;
+
+			}
+
+		}
+		return terminado;
+
+	}
+
 	/**
 	 * Simplemente escribe una barra en pantalla
 	 * 
@@ -127,6 +146,56 @@ public class Juego {
 		}
 		resul.append("\n");
 		return resul.toString();
+	}
+
+	public String imprimeNombreJugador() {
+		StringBuilder resultado = new StringBuilder();
+		int contador = 1;
+		for (Coordenada c : coordenadaJugadores) {
+			Jugador j = (Jugador) tablero.get(c);
+			resultado.append("El jugador " + contador + "es un " + j.getNombre() + "\n");
+			contador++;
+		}
+
+		return resultado.toString();
+	}
+
+	private void eliminarJugador(Coordenada coor) {// comprobar con los test, deberemos dar por sentado que todo está
+													// bien?
+		if (tablero.containsKey(coor) && coordenadaJugadores.contains(coor)) {
+			Jugador j = (Jugador) tablero.get(coor);
+			tablero.remove(coor, j);
+			coordenadaJugadores.remove(coor);
+		}
+
+	}
+
+	private Coordenada getNextPosition(char direction) throws JuegoException {
+		Coordenada c = coordenadaJugadores.get(jugadorJuega);
+		c = c.clone;// Porque no queremos cambiar la posicion real
+		if (direction == 'N') {
+			c.goUp();
+		} else if (direction == 'S') {
+			c.goDown();
+		} else if (direction == 'E') {
+			c.goRight();
+		} else if (direction == 'O') {
+			c.goLeft();
+		} else
+			throw new JuegoException("Dirección no válida.");
+
+		return c;
+
+	}
+	
+	private void cambiaJugadorAPosicion(Coordenada coor) {
+		Coordenada c = coordenadaJugadores.get(jugadorJuega);
+		Jugador j = (Jugador) tablero.get(c);
+		
+		tablero.remove(c, j);
+		tablero.put(c, j);
+		coordenadaJugadores.set(jugadorJuega, c);
+		
 	}
 
 	/**
@@ -221,6 +290,42 @@ public class Juego {
 		}
 
 		return resul;
+	}
+	
+	public void proximoJugador() {
+		
+	}
+	
+	public String getGanador() {
+		
+	}
+	
+	public String getNombreJugadorQueQueda() {//Tener en cuenta que el nombre en el documento tiene una errata, y podría darnos problemas en el futuro
+		
+	}
+	
+	public int getMovimientoJugador() {
+		
+	}
+	
+	public int getValorDado() {
+		
+	}
+	
+	public void decrementoDado() {
+		
+	}
+	
+	public void setDado() {
+		
+	}
+	
+	public Element obtenerElementoTablero(Coordenada coor) {
+		
+	}
+	
+	public Coordenada obtenerCoordenadaJugadorJuega() {
+		
 	}
 
 }
