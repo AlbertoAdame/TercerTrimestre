@@ -50,7 +50,7 @@ public class Jugador extends Element {
 
 	public void setDinero(int dinero) throws JugadorException {
 		if (dinero < 0 || dinero > Constantes.DINERO)
-			throw new JugadorException("Cantidad de dinero no válida");
+			throw new JugadorException("Cantidad de dinero no vï¿½lida");
 		this.dinero = dinero;
 	}
 
@@ -60,7 +60,7 @@ public class Jugador extends Element {
 
 	public void setPociones(int pociones) throws JugadorException {
 		if (pociones < 0 || pociones > Constantes.NUM_POCIONES)
-			throw new JugadorException("Cantidad de pociones no válida");
+			throw new JugadorException("Cantidad de pociones no vï¿½lida");
 		this.pociones = pociones;
 	}
 
@@ -70,7 +70,7 @@ public class Jugador extends Element {
 
 	public void setGemas(int gemas) throws JugadorException {
 		if (gemas < 0 || gemas > Constantes.NUM_GEMAS)
-			throw new JugadorException("Cantidad de gemas no válida");
+			throw new JugadorException("Cantidad de gemas no vï¿½lida");
 		this.gemas = gemas;
 	}
 
@@ -91,7 +91,6 @@ public class Jugador extends Element {
 		if (fuerzaThisJugador > fuerzaOtroJugador)
 			if (jugador.getPociones() > 0) {
 				jugador.setPociones(jugador.getPociones() - 1);
-				this.setPociones(this.getPociones() + 1);
 				resultado = Constantes.GANA_USA_POCIMA;
 			} else if (jugador.getDinero() > 0) {
 				this.setDinero(jugador.getDinero() + this.getDinero());
@@ -102,7 +101,6 @@ public class Jugador extends Element {
 		else if (fuerzaThisJugador < fuerzaOtroJugador)
 			if (this.getPociones() > 0) {
 				this.setPociones(this.getPociones() - 1);
-				jugador.setPociones(jugador.getPociones() + 1);
 				resultado = Constantes.PIERDE_USA_POCIMA;
 			} else if (this.getDinero() > 0) {
 				jugador.setDinero(this.getDinero() + jugador.getDinero());

@@ -20,7 +20,7 @@ import com.jacaranda.casetas.Caseta;
 
 public class Main {
 	public static Scanner teclado = new Scanner(System.in);
-	public static ArrayList<Caseta> casetas = new ArrayList<>();
+	public static ArrayList<Caseta> casetas = new ArrayList<>();//Esto tiene que ser una lista de calles
 
 	public static void main(String[] args) {
 
@@ -65,9 +65,9 @@ public class Main {
 				break;
 			}
 
-			case 5: {// "5. Mostrar para cada una de las calles del recinto ferial el número de
+			case 5: {// "5. Mostrar para cada una de las calles del recinto ferial el nï¿½mero de
 						// casetas de tipo familiar que existen. \r\n"
-				System.out.println(contarPorCalles("FAMILIAR"));// Me he creado un método para hacer este proceso, ya
+				System.out.println(contarPorCalles("FAMILIAR"));// Me he creado un mï¿½todo para hacer este proceso, ya
 																// que lo uso dos veces, ademas creo que seria mas
 																// optimo si hubiera cleado una clase "Calle", pero no
 																// estoy seguro
@@ -75,10 +75,10 @@ public class Main {
 				break;
 			}
 
-			case 6: {// "6. Mostrar para cada una de las calles del recinto ferial el número de
+			case 6: {// "6. Mostrar para cada una de las calles del recinto ferial el nï¿½mero de
 						// casetas de tipo Distrito que existen. \r\n"
 
-				System.out.println(contarPorCalles("DISTRITO"));// Me he creado un método para hacer este proceso, ya
+				System.out.println(contarPorCalles("DISTRITO"));// Me he creado un mï¿½todo para hacer este proceso, ya
 																// que lo uso dos veces, ademas creo que seria mas
 																// optimo si hubiera cleado una clase "Calle", pero no
 																// estoy seguro
@@ -142,8 +142,8 @@ public class Main {
 				+ "2. Mostrar todas las casetas de tipo familiar. \r\n"
 				+ "3. Mostrar todas las casetas de tipo Distrito \r\n"
 				+ "4. Mostrar todas las casetas que no sean ni familiares ni distritos. \r\n"
-				+ "5. Mostrar para cada una de las calles del recinto ferial el número de casetas de tipo familiar que existen. \r\n"
-				+ "6. Mostrar para cada una de las calles del recinto ferial el número de casetas de tipo Distrito que existen. \r\n"
+				+ "5. Mostrar para cada una de las calles del recinto ferial el nï¿½mero de casetas de tipo familiar que existen. \r\n"
+				+ "6. Mostrar para cada una de las calles del recinto ferial el nï¿½mero de casetas de tipo Distrito que existen. \r\n"
 				+ "7. Eliminar una caseta.\r\n" + "8. Salir.");
 	}
 
