@@ -80,6 +80,22 @@ public class Historial{
 		return resultado.toString();
 		
 	}
+	
+	public String practicarImprimirDesc(int mes) {
+		StringBuilder resultado = new StringBuilder("Descendente\n");
+		ArrayList<LocalDate> claves = new ArrayList<>(combinaciones.keySet());
+		
+		OrdenarDescendente orden = new OrdenarDescendente();
+		Collections.sort(claves, orden);
+		
+		for(LocalDate l : claves) {
+			if(l.getDayOfMonth()==mes)
+				resultado.append(l + " : " + this.combinaciones.get(l));
+		}
+		
+		return resultado.toString();
+		
+	}
 
 	@Override
 	public String toString() {
@@ -89,7 +105,7 @@ public class Historial{
 	@Override
 	public int hashCode() {
 		return Objects.hash(combinaciones);
-	}
+	}  
 
 	@Override
 	public boolean equals(Object obj) {

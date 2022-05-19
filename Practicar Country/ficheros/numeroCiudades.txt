@@ -1,0 +1,927 @@
+Afghanistan NumeroCiudades: 1
+Kabul numeroDirecciones: 1
+ 
+
+Algeria NumeroCiudades: 3
+Batna numeroDirecciones: 1
+ Bchar numeroDirecciones: 1
+ Skikda numeroDirecciones: 1
+ 
+
+American Samoa NumeroCiudades: 1
+Tafuna numeroDirecciones: 1
+ 
+
+Angola NumeroCiudades: 2
+Namibe numeroDirecciones: 1
+ Benguela numeroDirecciones: 0
+ 
+
+Anguilla NumeroCiudades: 1
+South Hill numeroDirecciones: 1
+ 
+
+Argentina NumeroCiudades: 13
+Almirante Brown numeroDirecciones: 1
+ Baha Blanca numeroDirecciones: 1
+ Crdoba numeroDirecciones: 1
+ Escobar numeroDirecciones: 1
+ La Plata numeroDirecciones: 1
+ Merlo numeroDirecciones: 1
+ San Miguel de Tucumn numeroDirecciones: 1
+ Santa F numeroDirecciones: 1
+ Tandil numeroDirecciones: 1
+ Vicente Lpez numeroDirecciones: 1
+ Avellaneda numeroDirecciones: 0
+ Ezeiza numeroDirecciones: 0
+ Quilmes numeroDirecciones: 0
+ 
+
+Armenia NumeroCiudades: 1
+Yerevan numeroDirecciones: 1
+ 
+
+Australia NumeroCiudades: 1
+Woodridge numeroDirecciones: 2
+ 
+
+Austria NumeroCiudades: 3
+Graz numeroDirecciones: 1
+ Linz numeroDirecciones: 1
+ Salzburg numeroDirecciones: 1
+ 
+
+Azerbaijan NumeroCiudades: 2
+Baku numeroDirecciones: 1
+ Sumqayit numeroDirecciones: 1
+ 
+
+Bahrain NumeroCiudades: 1
+al-Manama numeroDirecciones: 0
+ 
+
+Bangladesh NumeroCiudades: 3
+Dhaka numeroDirecciones: 1
+ Jamalpur numeroDirecciones: 1
+ Tangail numeroDirecciones: 1
+ 
+
+Belarus NumeroCiudades: 2
+Molodetno numeroDirecciones: 1
+ Mogiljov numeroDirecciones: 0
+ 
+
+Bolivia NumeroCiudades: 2
+El Alto numeroDirecciones: 1
+ Sucre numeroDirecciones: 1
+ 
+
+Brazil NumeroCiudades: 28
+Angra dos Reis numeroDirecciones: 1
+ Anpolis numeroDirecciones: 1
+ Aparecida de Goinia numeroDirecciones: 1
+ Araatuba numeroDirecciones: 1
+ Bag numeroDirecciones: 1
+ Belm numeroDirecciones: 1
+ Blumenau numeroDirecciones: 1
+ Boa Vista numeroDirecciones: 1
+ Braslia numeroDirecciones: 1
+ Goinia numeroDirecciones: 1
+ Guaruj numeroDirecciones: 1
+ Ibirit numeroDirecciones: 1
+ Juazeiro do Norte numeroDirecciones: 1
+ Luzinia numeroDirecciones: 1
+ Maring numeroDirecciones: 1
+ Po numeroDirecciones: 1
+ Poos de Caldas numeroDirecciones: 1
+ Rio Claro numeroDirecciones: 1
+ Santa Brbara dOeste numeroDirecciones: 1
+ Santo Andr numeroDirecciones: 1
+ So Leopoldo numeroDirecciones: 1
+ Sorocaba numeroDirecciones: 1
+ Vila Velha numeroDirecciones: 1
+ Vitria de Santo Anto numeroDirecciones: 1
+ guas Lindas de Gois numeroDirecciones: 1
+ Alvorada numeroDirecciones: 0
+ Juiz de Fora numeroDirecciones: 0
+ So Bernardo do Campo numeroDirecciones: 0
+ 
+
+Brunei NumeroCiudades: 1
+Bandar Seri Begawan numeroDirecciones: 1
+ 
+
+Bulgaria NumeroCiudades: 2
+Stara Zagora numeroDirecciones: 1
+ Ruse numeroDirecciones: 0
+ 
+
+Cambodia NumeroCiudades: 2
+Phnom Penh numeroDirecciones: 1
+ Battambang numeroDirecciones: 0
+ 
+
+Cameroon NumeroCiudades: 2
+Bamenda numeroDirecciones: 1
+ Yaound numeroDirecciones: 1
+ 
+
+Canada NumeroCiudades: 7
+Lethbridge numeroDirecciones: 2
+ Halifax numeroDirecciones: 1
+ Oshawa numeroDirecciones: 1
+ Richmond Hill numeroDirecciones: 1
+ Vancouver numeroDirecciones: 1
+ Gatineau numeroDirecciones: 0
+ London numeroDirecciones: 0
+ 
+
+Chad NumeroCiudades: 1
+NDjamna numeroDirecciones: 0
+ 
+
+Chile NumeroCiudades: 3
+Antofagasta numeroDirecciones: 1
+ Rancagua numeroDirecciones: 1
+ Coquimbo numeroDirecciones: 0
+ 
+
+China NumeroCiudades: 53
+Changzhou numeroDirecciones: 1
+ Datong numeroDirecciones: 1
+ Daxian numeroDirecciones: 1
+ Dongying numeroDirecciones: 1
+ Emeishan numeroDirecciones: 1
+ Enshi numeroDirecciones: 1
+ Ezhou numeroDirecciones: 1
+ Fuyu numeroDirecciones: 1
+ Fuzhou numeroDirecciones: 1
+ Hami numeroDirecciones: 1
+ Hohhot numeroDirecciones: 1
+ Huaian numeroDirecciones: 1
+ Jinchang numeroDirecciones: 1
+ Junan numeroDirecciones: 1
+ Korla numeroDirecciones: 1
+ Laiwu numeroDirecciones: 1
+ Laohekou numeroDirecciones: 1
+ Lengshuijiang numeroDirecciones: 1
+ Liaocheng numeroDirecciones: 1
+ Meixian numeroDirecciones: 1
+ Nanyang numeroDirecciones: 1
+ Pingxiang numeroDirecciones: 1
+ Qinhuangdao numeroDirecciones: 1
+ Shanwei numeroDirecciones: 1
+ Shenzhen numeroDirecciones: 1
+ Tianjin numeroDirecciones: 1
+ Tiefa numeroDirecciones: 1
+ Tongliao numeroDirecciones: 1
+ Xiangfan numeroDirecciones: 1
+ Xiangtan numeroDirecciones: 1
+ Xinxiang numeroDirecciones: 1
+ Yantai numeroDirecciones: 1
+ Yuncheng numeroDirecciones: 1
+ Yuzhou numeroDirecciones: 1
+ Zalantun numeroDirecciones: 1
+ Baicheng numeroDirecciones: 0
+ Baiyin numeroDirecciones: 0
+ Binzhou numeroDirecciones: 0
+ Haining numeroDirecciones: 0
+ Jining numeroDirecciones: 0
+ Jinzhou numeroDirecciones: 0
+ Leshan numeroDirecciones: 0
+ Rizhao numeroDirecciones: 0
+ Sanya numeroDirecciones: 0
+ Shaoguan numeroDirecciones: 0
+ Suihua numeroDirecciones: 0
+ Tieli numeroDirecciones: 0
+ Weifang numeroDirecciones: 0
+ Xintai numeroDirecciones: 0
+ Yinchuan numeroDirecciones: 0
+ Yingkou numeroDirecciones: 0
+ Zaoyang numeroDirecciones: 0
+ Zhoushan numeroDirecciones: 0
+ 
+
+Colombia NumeroCiudades: 6
+Buenaventura numeroDirecciones: 1
+ Dos Quebradas numeroDirecciones: 1
+ Florencia numeroDirecciones: 1
+ Pereira numeroDirecciones: 1
+ Sincelejo numeroDirecciones: 1
+ Sogamoso numeroDirecciones: 0
+ 
+
+Congo NumeroCiudades: 2
+Lubumbashi numeroDirecciones: 1
+ Mwene-Ditu numeroDirecciones: 1
+ 
+
+Czech Republic NumeroCiudades: 1
+Olomouc numeroDirecciones: 1
+ 
+
+Dominican Republic NumeroCiudades: 3
+La Romana numeroDirecciones: 1
+ San Felipe de Puerto Plata numeroDirecciones: 1
+ Santiago de los Caballeros numeroDirecciones: 1
+ 
+
+Ecuador NumeroCiudades: 3
+Portoviejo numeroDirecciones: 1
+ Loja numeroDirecciones: 0
+ Robamba numeroDirecciones: 0
+ 
+
+Egypt NumeroCiudades: 6
+Idfu numeroDirecciones: 1
+ Qalyub numeroDirecciones: 1
+ Sawhaj numeroDirecciones: 1
+ Shubra al-Khayma numeroDirecciones: 1
+ Bilbays numeroDirecciones: 0
+ Mit Ghamr numeroDirecciones: 0
+ 
+
+Estonia NumeroCiudades: 1
+Tartu numeroDirecciones: 1
+ 
+
+Ethiopia NumeroCiudades: 1
+Addis Abeba numeroDirecciones: 1
+ 
+
+Faroe Islands NumeroCiudades: 1
+Trshavn numeroDirecciones: 1
+ 
+
+Finland NumeroCiudades: 1
+Oulu numeroDirecciones: 1
+ 
+
+France NumeroCiudades: 4
+Brest numeroDirecciones: 1
+ Le Mans numeroDirecciones: 1
+ Toulon numeroDirecciones: 1
+ Toulouse numeroDirecciones: 1
+ 
+
+French Guiana NumeroCiudades: 1
+Cayenne numeroDirecciones: 1
+ 
+
+French Polynesia NumeroCiudades: 2
+Faaa numeroDirecciones: 1
+ Papeete numeroDirecciones: 1
+ 
+
+Gambia NumeroCiudades: 1
+Banjul numeroDirecciones: 0
+ 
+
+Germany NumeroCiudades: 7
+Duisburg numeroDirecciones: 1
+ Erlangen numeroDirecciones: 1
+ Halle/Saale numeroDirecciones: 1
+ Mannheim numeroDirecciones: 1
+ Saarbrcken numeroDirecciones: 1
+ Siegen numeroDirecciones: 1
+ Witten numeroDirecciones: 1
+ 
+
+Greece NumeroCiudades: 2
+Athenai numeroDirecciones: 1
+ Patras numeroDirecciones: 0
+ 
+
+Greenland NumeroCiudades: 1
+Nuuk numeroDirecciones: 1
+ 
+
+Holy See Vatican City State NumeroCiudades: 1
+Citt del Vaticano numeroDirecciones: 1
+ 
+
+Hong Kong NumeroCiudades: 1
+Kowloon and New Kowloon numeroDirecciones: 1
+ 
+
+Hungary NumeroCiudades: 1
+Szkesfehrvr numeroDirecciones: 0
+ 
+
+India NumeroCiudades: 60
+Adoni numeroDirecciones: 1
+ Ahmadnagar numeroDirecciones: 1
+ Allappuzha Alleppey numeroDirecciones: 1
+ Ambattur numeroDirecciones: 1
+ Balurghat numeroDirecciones: 1
+ Berhampore Baharampur numeroDirecciones: 1
+ Bhavnagar numeroDirecciones: 1
+ Bhilwara numeroDirecciones: 1
+ Bhopal numeroDirecciones: 1
+ Bhusawal numeroDirecciones: 1
+ Bijapur numeroDirecciones: 1
+ Chandrapur numeroDirecciones: 1
+ Dhule Dhulia numeroDirecciones: 1
+ Etawah numeroDirecciones: 1
+ Firozabad numeroDirecciones: 1
+ Gandhinagar numeroDirecciones: 1
+ Gulbarga numeroDirecciones: 1
+ Haldia numeroDirecciones: 1
+ Halisahar numeroDirecciones: 1
+ Hoshiarpur numeroDirecciones: 1
+ Hubli-Dharwad numeroDirecciones: 1
+ Jaipur numeroDirecciones: 1
+ Jhansi numeroDirecciones: 1
+ Jodhpur numeroDirecciones: 1
+ Kamarhati numeroDirecciones: 1
+ Karnal numeroDirecciones: 1
+ Katihar numeroDirecciones: 1
+ Kumbakonam numeroDirecciones: 1
+ Miraj numeroDirecciones: 1
+ Munger Monghyr numeroDirecciones: 1
+ Mysore numeroDirecciones: 1
+ Nagaon numeroDirecciones: 1
+ Palghat Palakkad numeroDirecciones: 1
+ Parbhani numeroDirecciones: 1
+ Pathankot numeroDirecciones: 1
+ Patiala numeroDirecciones: 1
+ Pudukkottai numeroDirecciones: 1
+ Pune numeroDirecciones: 1
+ Purnea Purnia numeroDirecciones: 1
+ Rae Bareli numeroDirecciones: 1
+ Rampur numeroDirecciones: 1
+ Ranchi numeroDirecciones: 1
+ Sambhal numeroDirecciones: 1
+ Satna numeroDirecciones: 1
+ Shimoga numeroDirecciones: 1
+ Shivapuri numeroDirecciones: 1
+ Tambaram numeroDirecciones: 1
+ Udaipur numeroDirecciones: 1
+ Uluberia numeroDirecciones: 1
+ Uttarpara-Kotrung numeroDirecciones: 1
+ Valparai numeroDirecciones: 1
+ Varanasi Benares numeroDirecciones: 1
+ Yamuna Nagar numeroDirecciones: 1
+ Amroha numeroDirecciones: 0
+ Bhimavaram numeroDirecciones: 0
+ Chapra numeroDirecciones: 0
+ Kanchrapara numeroDirecciones: 0
+ Rajkot numeroDirecciones: 0
+ Siliguri Shiliguri numeroDirecciones: 0
+ Vijayawada numeroDirecciones: 0
+ 
+
+Indonesia NumeroCiudades: 14
+Cianjur numeroDirecciones: 1
+ Ciomas numeroDirecciones: 1
+ Ciparay numeroDirecciones: 1
+ Gorontalo numeroDirecciones: 1
+ Jakarta numeroDirecciones: 1
+ Pemalang numeroDirecciones: 1
+ Probolinggo numeroDirecciones: 1
+ Surakarta numeroDirecciones: 1
+ Tegal numeroDirecciones: 1
+ Lhokseumawe numeroDirecciones: 0
+ Madiun numeroDirecciones: 0
+ Pangkal Pinang numeroDirecciones: 0
+ Pontianak numeroDirecciones: 0
+ Purwakarta numeroDirecciones: 0
+ 
+
+Iran NumeroCiudades: 8
+Arak numeroDirecciones: 1
+ Esfahan numeroDirecciones: 1
+ Kermanshah numeroDirecciones: 1
+ Najafabad numeroDirecciones: 1
+ Qomsheh numeroDirecciones: 1
+ Shahr-e Kord numeroDirecciones: 1
+ Sirjan numeroDirecciones: 1
+ Tabriz numeroDirecciones: 1
+ 
+
+Iraq NumeroCiudades: 1
+Mosul numeroDirecciones: 0
+ 
+
+Israel NumeroCiudades: 4
+Ashdod numeroDirecciones: 1
+ Bat Yam numeroDirecciones: 1
+ Tel Aviv-Jaffa numeroDirecciones: 1
+ Ashqelon numeroDirecciones: 0
+ 
+
+Italy NumeroCiudades: 7
+Alessandria numeroDirecciones: 1
+ Bergamo numeroDirecciones: 1
+ Brescia numeroDirecciones: 1
+ Syrakusa numeroDirecciones: 1
+ Brindisi numeroDirecciones: 0
+ Livorno numeroDirecciones: 0
+ Udine numeroDirecciones: 0
+ 
+
+Japan NumeroCiudades: 31
+Fukuyama numeroDirecciones: 1
+ Higashiosaka numeroDirecciones: 1
+ Hino numeroDirecciones: 1
+ Hiroshima numeroDirecciones: 1
+ Iwaki numeroDirecciones: 1
+ Iwakuni numeroDirecciones: 1
+ Iwatsuki numeroDirecciones: 1
+ Izumisano numeroDirecciones: 1
+ Kakamigahara numeroDirecciones: 1
+ Kamakura numeroDirecciones: 1
+ Koriyama numeroDirecciones: 1
+ Kurashiki numeroDirecciones: 1
+ Matsue numeroDirecciones: 1
+ Miyakonojo numeroDirecciones: 1
+ Nagareyama numeroDirecciones: 1
+ Okinawa numeroDirecciones: 1
+ Omiya numeroDirecciones: 1
+ Onomichi numeroDirecciones: 1
+ Otsu numeroDirecciones: 1
+ Sagamihara numeroDirecciones: 1
+ Sasebo numeroDirecciones: 1
+ Shimonoseki numeroDirecciones: 1
+ Tama numeroDirecciones: 1
+ Tsuyama numeroDirecciones: 1
+ Urawa numeroDirecciones: 1
+ Akishima numeroDirecciones: 0
+ Isesaki numeroDirecciones: 0
+ Kanazawa numeroDirecciones: 0
+ Kuwana numeroDirecciones: 0
+ Okayama numeroDirecciones: 0
+ Ueda numeroDirecciones: 0
+ 
+
+Kazakstan NumeroCiudades: 2
+Pavlodar numeroDirecciones: 1
+ Zhezqazghan numeroDirecciones: 0
+ 
+
+Kenya NumeroCiudades: 2
+Kisumu numeroDirecciones: 1
+ Nyeri numeroDirecciones: 1
+ 
+
+Kuwait NumeroCiudades: 1
+Jalib al-Shuyukh numeroDirecciones: 1
+ 
+
+Latvia NumeroCiudades: 2
+Daugavpils numeroDirecciones: 1
+ Liepaja numeroDirecciones: 1
+ 
+
+Liechtenstein NumeroCiudades: 1
+Vaduz numeroDirecciones: 1
+ 
+
+Lithuania NumeroCiudades: 1
+Vilnius numeroDirecciones: 0
+ 
+
+Madagascar NumeroCiudades: 1
+Mahajanga numeroDirecciones: 1
+ 
+
+Malawi NumeroCiudades: 1
+Lilongwe numeroDirecciones: 1
+ 
+
+Malaysia NumeroCiudades: 3
+Ipoh numeroDirecciones: 1
+ Kuching numeroDirecciones: 1
+ Sungai Petani numeroDirecciones: 1
+ 
+
+Mexico NumeroCiudades: 30
+Allende numeroDirecciones: 1
+ Atlixco numeroDirecciones: 1
+ Coacalco de Berriozbal numeroDirecciones: 1
+ Cuauhtmoc numeroDirecciones: 1
+ Cuautla numeroDirecciones: 1
+ El Fuerte numeroDirecciones: 1
+ Guadalajara numeroDirecciones: 1
+ Hidalgo numeroDirecciones: 1
+ Huixquilucan numeroDirecciones: 1
+ Jurez numeroDirecciones: 1
+ Matamoros numeroDirecciones: 1
+ Mexicali numeroDirecciones: 1
+ Nezahualcyotl numeroDirecciones: 1
+ Pachuca de Soto numeroDirecciones: 1
+ Salamanca numeroDirecciones: 1
+ San Felipe del Progreso numeroDirecciones: 1
+ San Juan Bautista Tuxtepec numeroDirecciones: 1
+ Torren numeroDirecciones: 1
+ Uruapan numeroDirecciones: 1
+ Valle de Santiago numeroDirecciones: 1
+ Zapopan numeroDirecciones: 1
+ Acua numeroDirecciones: 0
+ Carmen numeroDirecciones: 0
+ Celaya numeroDirecciones: 0
+ Coatzacoalcos numeroDirecciones: 0
+ Cuernavaca numeroDirecciones: 0
+ Huejutla de Reyes numeroDirecciones: 0
+ Jos Azueta numeroDirecciones: 0
+ La Paz numeroDirecciones: 0
+ Monclova numeroDirecciones: 0
+ 
+
+Moldova NumeroCiudades: 1
+Chisinau numeroDirecciones: 1
+ 
+
+Morocco NumeroCiudades: 3
+Nador numeroDirecciones: 1
+ Sal numeroDirecciones: 1
+ Beni-Mellal numeroDirecciones: 0
+ 
+
+Mozambique NumeroCiudades: 3
+Beira numeroDirecciones: 1
+ Naala-Porto numeroDirecciones: 1
+ Tete numeroDirecciones: 1
+ 
+
+Myanmar NumeroCiudades: 2
+Monywa numeroDirecciones: 1
+ Myingyan numeroDirecciones: 1
+ 
+
+Nauru NumeroCiudades: 1
+Yangor numeroDirecciones: 0
+ 
+
+Nepal NumeroCiudades: 1
+Birgunj numeroDirecciones: 1
+ 
+
+Netherlands NumeroCiudades: 5
+Amersfoort numeroDirecciones: 1
+ Apeldoorn numeroDirecciones: 1
+ Ede numeroDirecciones: 1
+ s-Hertogenbosch numeroDirecciones: 1
+ Emmen numeroDirecciones: 0
+ 
+
+New Zealand NumeroCiudades: 1
+Hamilton numeroDirecciones: 1
+ 
+
+Nigeria NumeroCiudades: 13
+Benin City numeroDirecciones: 1
+ Deba Habe numeroDirecciones: 1
+ Effon-Alaiye numeroDirecciones: 1
+ Ife numeroDirecciones: 1
+ Ikerre numeroDirecciones: 1
+ Ilorin numeroDirecciones: 1
+ Kaduna numeroDirecciones: 1
+ Ogbomosho numeroDirecciones: 1
+ Ondo numeroDirecciones: 1
+ Owo numeroDirecciones: 1
+ Oyo numeroDirecciones: 1
+ Zaria numeroDirecciones: 1
+ Sokoto numeroDirecciones: 0
+ 
+
+North Korea NumeroCiudades: 1
+Pyongyang numeroDirecciones: 1
+ 
+
+Oman NumeroCiudades: 2
+Masqat numeroDirecciones: 1
+ Salala numeroDirecciones: 0
+ 
+
+Pakistan NumeroCiudades: 5
+Dadu numeroDirecciones: 1
+ Mandi Bahauddin numeroDirecciones: 1
+ Mardan numeroDirecciones: 1
+ Okara numeroDirecciones: 1
+ Shikarpur numeroDirecciones: 1
+ 
+
+Paraguay NumeroCiudades: 3
+Asuncin numeroDirecciones: 1
+ Ciudad del Este numeroDirecciones: 1
+ San Lorenzo numeroDirecciones: 1
+ 
+
+Peru NumeroCiudades: 4
+Callao numeroDirecciones: 1
+ Lima numeroDirecciones: 1
+ Hunuco numeroDirecciones: 0
+ Sullana numeroDirecciones: 0
+ 
+
+Philippines NumeroCiudades: 20
+Baybay numeroDirecciones: 1
+ Bayugan numeroDirecciones: 1
+ Bislig numeroDirecciones: 1
+ Cabuyao numeroDirecciones: 1
+ Cavite numeroDirecciones: 1
+ Davao numeroDirecciones: 1
+ Gingoog numeroDirecciones: 1
+ Hagonoy numeroDirecciones: 1
+ Imus numeroDirecciones: 1
+ Lapu-Lapu numeroDirecciones: 1
+ Mandaluyong numeroDirecciones: 1
+ Ozamis numeroDirecciones: 1
+ Taguig numeroDirecciones: 1
+ Tanauan numeroDirecciones: 1
+ Tanza numeroDirecciones: 1
+ Tuguegarao numeroDirecciones: 1
+ Iligan numeroDirecciones: 0
+ Santa Rosa numeroDirecciones: 0
+ Talavera numeroDirecciones: 0
+ Tarlac numeroDirecciones: 0
+ 
+
+Poland NumeroCiudades: 8
+Bydgoszcz numeroDirecciones: 1
+ Jastrzebie-Zdrj numeroDirecciones: 1
+ Kalisz numeroDirecciones: 1
+ Tychy numeroDirecciones: 1
+ Czestochowa numeroDirecciones: 0
+ Lublin numeroDirecciones: 0
+ Plock numeroDirecciones: 0
+ Wroclaw numeroDirecciones: 0
+ 
+
+Puerto Rico NumeroCiudades: 2
+Arecibo numeroDirecciones: 1
+ Ponce numeroDirecciones: 1
+ 
+
+Romania NumeroCiudades: 2
+Botosani numeroDirecciones: 1
+ Bucuresti numeroDirecciones: 0
+ 
+
+Runion NumeroCiudades: 1
+Saint-Denis numeroDirecciones: 1
+ 
+
+Russian Federation NumeroCiudades: 28
+Atinsk numeroDirecciones: 1
+ Balaiha numeroDirecciones: 1
+ Dzerzinsk numeroDirecciones: 1
+ Elista numeroDirecciones: 1
+ Ivanovo numeroDirecciones: 1
+ Jaroslavl numeroDirecciones: 1
+ Jelets numeroDirecciones: 1
+ Kaliningrad numeroDirecciones: 1
+ Kirovo-Tepetsk numeroDirecciones: 1
+ Kolpino numeroDirecciones: 1
+ Korolev numeroDirecciones: 1
+ Kurgan numeroDirecciones: 1
+ Kursk numeroDirecciones: 1
+ Lipetsk numeroDirecciones: 1
+ Ljubertsy numeroDirecciones: 1
+ Maikop numeroDirecciones: 1
+ Moscow numeroDirecciones: 1
+ Nabereznyje Telny numeroDirecciones: 1
+ Niznekamsk numeroDirecciones: 1
+ Novoterkassk numeroDirecciones: 1
+ Smolensk numeroDirecciones: 1
+ Syktyvkar numeroDirecciones: 1
+ Teboksary numeroDirecciones: 1
+ Usolje-Sibirskoje numeroDirecciones: 1
+ Zeleznogorsk numeroDirecciones: 1
+ Kamyin numeroDirecciones: 0
+ Pjatigorsk numeroDirecciones: 0
+ Serpuhov numeroDirecciones: 0
+ 
+
+Saint Vincent and the Grenadines NumeroCiudades: 1
+Kingstown numeroDirecciones: 1
+ 
+
+Saudi Arabia NumeroCiudades: 5
+Abha numeroDirecciones: 1
+ Jedda numeroDirecciones: 1
+ Tabuk numeroDirecciones: 1
+ al-Hawiya numeroDirecciones: 1
+ al-Qatif numeroDirecciones: 1
+ 
+
+Senegal NumeroCiudades: 1
+Ziguinchor numeroDirecciones: 1
+ 
+
+Slovakia NumeroCiudades: 1
+Bratislava numeroDirecciones: 1
+ 
+
+South Africa NumeroCiudades: 11
+Boksburg numeroDirecciones: 1
+ Botshabelo numeroDirecciones: 1
+ Johannesburg numeroDirecciones: 1
+ Kimberley numeroDirecciones: 1
+ Klerksdorp numeroDirecciones: 1
+ Newcastle numeroDirecciones: 1
+ Paarl numeroDirecciones: 1
+ Rustenburg numeroDirecciones: 1
+ Soshanguve numeroDirecciones: 1
+ Springs numeroDirecciones: 1
+ Chatsworth numeroDirecciones: 0
+ 
+
+South Korea NumeroCiudades: 5
+Cheju numeroDirecciones: 1
+ Kimchon numeroDirecciones: 1
+ Naju numeroDirecciones: 1
+ Uijongbu numeroDirecciones: 1
+ Tonghae numeroDirecciones: 0
+ 
+
+Spain NumeroCiudades: 5
+A Corua La Corua numeroDirecciones: 1
+ Donostia-San Sebastin numeroDirecciones: 1
+ Gijn numeroDirecciones: 1
+ Ourense Orense numeroDirecciones: 1
+ Santiago de Compostela numeroDirecciones: 0
+ 
+
+Sri Lanka NumeroCiudades: 1
+Jaffna numeroDirecciones: 1
+ 
+
+Sudan NumeroCiudades: 2
+Omdurman numeroDirecciones: 1
+ al-Qadarif numeroDirecciones: 1
+ 
+
+Sweden NumeroCiudades: 1
+Malm numeroDirecciones: 1
+ 
+
+Switzerland NumeroCiudades: 3
+Basel numeroDirecciones: 1
+ Bern numeroDirecciones: 1
+ Lausanne numeroDirecciones: 0
+ 
+
+Taiwan NumeroCiudades: 10
+Changhwa numeroDirecciones: 1
+ Chiayi numeroDirecciones: 1
+ Hsichuh numeroDirecciones: 1
+ Lungtan numeroDirecciones: 1
+ Nantou numeroDirecciones: 1
+ Touliu numeroDirecciones: 1
+ Chungho numeroDirecciones: 0
+ Fengshan numeroDirecciones: 0
+ Tanshui numeroDirecciones: 0
+ Tsaotun numeroDirecciones: 0
+ 
+
+Tanzania NumeroCiudades: 3
+Tabora numeroDirecciones: 1
+ Zanzibar numeroDirecciones: 1
+ Mwanza numeroDirecciones: 0
+ 
+
+Thailand NumeroCiudades: 3
+Nakhon Sawan numeroDirecciones: 1
+ Pak Kret numeroDirecciones: 1
+ Songkhla numeroDirecciones: 1
+ 
+
+Tonga NumeroCiudades: 1
+Nukualofa numeroDirecciones: 1
+ 
+
+Tunisia NumeroCiudades: 1
+Sousse numeroDirecciones: 1
+ 
+
+Turkey NumeroCiudades: 15
+Adana numeroDirecciones: 1
+ Balikesir numeroDirecciones: 1
+ Batman numeroDirecciones: 1
+ Inegl numeroDirecciones: 1
+ Kilis numeroDirecciones: 1
+ Ktahya numeroDirecciones: 1
+ Osmaniye numeroDirecciones: 1
+ Tarsus numeroDirecciones: 1
+ Usak numeroDirecciones: 1
+ Denizli numeroDirecciones: 0
+ Eskisehir numeroDirecciones: 0
+ Gaziantep numeroDirecciones: 0
+ Sivas numeroDirecciones: 0
+ Sultanbeyli numeroDirecciones: 0
+ Tokat numeroDirecciones: 0
+ 
+
+Turkmenistan NumeroCiudades: 1
+Ashgabat numeroDirecciones: 1
+ 
+
+Tuvalu NumeroCiudades: 1
+Funafuti numeroDirecciones: 1
+ 
+
+Ukraine NumeroCiudades: 6
+Kamjanets-Podilskyi numeroDirecciones: 1
+ Mukateve numeroDirecciones: 1
+ Simferopol numeroDirecciones: 1
+ Sumy numeroDirecciones: 1
+ Konotop numeroDirecciones: 0
+ ostka numeroDirecciones: 0
+ 
+
+United Arab Emirates NumeroCiudades: 3
+Abu Dhabi numeroDirecciones: 1
+ Sharja numeroDirecciones: 1
+ al-Ayn numeroDirecciones: 1
+ 
+
+United Kingdom NumeroCiudades: 8
+Bradford numeroDirecciones: 1
+ Dundee numeroDirecciones: 1
+ London numeroDirecciones: 1
+ Southend-on-Sea numeroDirecciones: 1
+ Southampton numeroDirecciones: 0
+ Southport numeroDirecciones: 0
+ Stockport numeroDirecciones: 0
+ York numeroDirecciones: 0
+ 
+
+United States NumeroCiudades: 35
+Arlington numeroDirecciones: 1
+ Augusta-Richmond County numeroDirecciones: 1
+ Aurora numeroDirecciones: 1
+ Bellevue numeroDirecciones: 1
+ Brockton numeroDirecciones: 1
+ Citrus Heights numeroDirecciones: 1
+ Clarksville numeroDirecciones: 1
+ Compton numeroDirecciones: 1
+ Dallas numeroDirecciones: 1
+ Dayton numeroDirecciones: 1
+ El Monte numeroDirecciones: 1
+ Fontana numeroDirecciones: 1
+ Grand Prairie numeroDirecciones: 1
+ Greensboro numeroDirecciones: 1
+ Kansas City numeroDirecciones: 1
+ Lancaster numeroDirecciones: 1
+ Laredo numeroDirecciones: 1
+ Lincoln numeroDirecciones: 1
+ Manchester numeroDirecciones: 1
+ Memphis numeroDirecciones: 1
+ Peoria numeroDirecciones: 1
+ Roanoke numeroDirecciones: 1
+ Rockford numeroDirecciones: 1
+ Saint Louis numeroDirecciones: 1
+ Salinas numeroDirecciones: 1
+ San Bernardino numeroDirecciones: 1
+ Sterling Heights numeroDirecciones: 1
+ Sunnyvale numeroDirecciones: 1
+ Tallahassee numeroDirecciones: 1
+ Warren numeroDirecciones: 1
+ Akron numeroDirecciones: 0
+ Cape Coral numeroDirecciones: 0
+ Garden Grove numeroDirecciones: 0
+ Garland numeroDirecciones: 0
+ Joliet numeroDirecciones: 0
+ 
+
+Venezuela NumeroCiudades: 7
+Caracas numeroDirecciones: 1
+ Cuman numeroDirecciones: 1
+ Maracabo numeroDirecciones: 1
+ Ocumare del Tuy numeroDirecciones: 1
+ Valle de la Pascua numeroDirecciones: 1
+ Barcelona numeroDirecciones: 0
+ Valencia numeroDirecciones: 0
+ 
+
+Vietnam NumeroCiudades: 6
+Haiphong numeroDirecciones: 1
+ Hanoi numeroDirecciones: 1
+ Nam Dinh numeroDirecciones: 1
+ Cam Ranh numeroDirecciones: 0
+ Nha Trang numeroDirecciones: 0
+ Vinh numeroDirecciones: 0
+ 
+
+Virgin Islands NumeroCiudades: 1
+Charlotte Amalie numeroDirecciones: 1
+ 
+
+Yemen NumeroCiudades: 4
+Aden numeroDirecciones: 1
+ Hodeida numeroDirecciones: 1
+ Sanaa numeroDirecciones: 1
+ Taizz numeroDirecciones: 1
+ 
+
+Yugoslavia NumeroCiudades: 2
+Kragujevac numeroDirecciones: 1
+ Novi Sad numeroDirecciones: 0
+ 
+
+Zambia NumeroCiudades: 1
+Kitwe numeroDirecciones: 1
+ 
+
