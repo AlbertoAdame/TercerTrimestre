@@ -106,7 +106,7 @@ public class Temporada implements Comparable<Temporada> {
 			throws SerieException {///////////////////////
 		int posicion = capitulos.indexOf(nombreCapituloAnterior);
 		if (posicion != -1) {
-			capitulos.set(posicion, nombreCapituloAnnadir);
+			capitulos.add(posicion+1, nombreCapituloAnnadir);//No había que remplazar, había que dejar los dos
 		} else
 			throw new SerieException("No se ha encontrado el capitulo anterior.");
 
@@ -187,7 +187,7 @@ public class Temporada implements Comparable<Temporada> {
 	public int compareTo(Temporada o) {////////////////////////////
 		if (o == null)
 			return -1;
-		return (int) (o.getNotaMedia() - this.getNotaMedia());
+		return -(int) (o.getNotaMedia() - this.getNotaMedia());
 	}
 
 //	public String imprimirSeries() {

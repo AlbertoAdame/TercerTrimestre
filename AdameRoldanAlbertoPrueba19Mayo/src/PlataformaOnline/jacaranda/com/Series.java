@@ -154,7 +154,7 @@ public class Series {
 		Collections.sort(claves);
 
 		for (String l : claves) {
-			resultado.append(l + "," + mapSeries.get(l).getAnno() + "," + mapSeries.get(l).numeroTemporadas() + "\n");
+			resultado.append(l + "," + mapSeries.get(l).getAnno() + "," + mapSeries.get(l).getTema() + "\n");//no pedía numero capitulos, pedía tema
 		}
 
 		return resultado.toString();

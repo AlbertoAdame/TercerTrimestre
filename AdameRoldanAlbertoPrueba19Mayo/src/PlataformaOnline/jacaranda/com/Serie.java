@@ -36,8 +36,9 @@ public class Serie implements Comparable<Serie>{
 	 * @throws SerieException
 	 */
 	public void annadirTemporada(String nombreTemporada) throws SerieException {//////////////////////////////////////
-		if (!temporadas.contains(nombreTemporada)) {
-			Temporada t = new Temporada(nombreTemporada);
+		Temporada t = new Temporada(nombreTemporada);
+		if (!temporadas.contains(t)) {
+			
 			temporadas.add(t);
 		}
 
@@ -228,7 +229,7 @@ public class Serie implements Comparable<Serie>{
 	public int compareTo(Serie o) {/////////////////
 		if(o==null)
 			return -1;
-		return -o.anno-this.anno;//Comprobar si el menos lo pone descendente
+		return o.anno-this.anno;//Tenía todos los compares al contrario
 	}
 
 	public String imprimirTemporadas() {

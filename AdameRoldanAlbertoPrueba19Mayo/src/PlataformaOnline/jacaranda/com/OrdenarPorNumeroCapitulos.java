@@ -8,7 +8,7 @@ public class OrdenarPorNumeroCapitulos implements Comparator<Temporada> {
 	public int compare(Temporada o1, Temporada o2) {
 		if(o1==null || o2==null)
 			return -1;
-		return -o2.getNumeroCapitulos()-o1.getNumeroCapitulos();
+		return o2.getNumeroCapitulos()-o1.getNumeroCapitulos();
 	}
 
 }
