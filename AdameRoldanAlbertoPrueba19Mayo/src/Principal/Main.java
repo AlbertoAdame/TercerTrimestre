@@ -5,9 +5,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+import PlataformaOnline.jacaranda.com.Serie;
 import PlataformaOnline.jacaranda.com.SerieException;
 import PlataformaOnline.jacaranda.com.Series;
 import PlataformaOnline.jacaranda.com.Tema;
+import PlataformaOnline.jacaranda.com.Temporada;
 
 public class Main {
 
@@ -30,11 +32,42 @@ public class Main {
 			series.annadirCapituloTemporada("This is us", "Empezamos", "CAsi el final");
 			series.annadirCapituloTemporada("This is us", "Empezamos", "El final");
 
+			Temporada t = new Temporada("This is us");
+			t.annadirCapitulo("La faimila");
+			t.annadirCapitulo("El mejor padre");
+			t.annadirCapitulo("La vida");
+			
+			t.anadirCapituloDespues("despues", "La faimila");
+//			System.out.println("comprobar");
+//			
+//			System.out.println(t.primerCapituloQueContieneEstaPalabara("La"));
+			
+			Serie s = new Serie("nombre serie", 1999, Tema.COMEDIA);
+			s.annadirTemporada("temporada uno");
+			s.annadirTemporada("temporada dos");
+//			s.annadirTemporada("temporada uno");
+			s.annadirCapituloTemporada("temporada uno", "cap uno");
+			s.annadirCapituloTemporada("temporada uno", "cap dos");
+			s.annadirCapituloTemporada("temporada uno", "cap uno");
+			s.valorarTemporada("temporada uno", 10);
+//			s.valorarTemporada("temporada uno", 100);
+			s.valorarTemporada("temporada uno", 5);
+			System.out.println(s.listadoTemporadasPorNotaMedia());
+			System.out.println(s.listadoTemporadasPorNumeroDeCapitulos());
+
+			System.out.println(series.numeroDeTemporadasDeUnaSerie("This is us"));
+			series.modificarTema("This is us", Tema.COMEDIA);
+//			series.modificarTema("This is us", Tema.DRAMA);
+			System.out.println(series.listadoOrdenadoSeriesDeUnTema(Tema.COMEDIA));
+			
+			
+			
 		} catch (SerieException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		
+//		System.out.println(series.imprimirCapitulos());
 		escribirEnFicheroCapitulos("ficheros//Fichero Capitulos.csv");
 		escribirEnFicheroSeries("ficheros//Fichero Series.csv");
 		escribirEnFicheroTemporada("ficheros//Fichero Temporada.csv");
@@ -55,6 +88,8 @@ public class Main {
 		}
 	}
 
+
+	
 	public static void escribirEnFicheroCapitulos(String nombre) {
 		try {
 			FileWriter flujoEscritura = new FileWriter(nombre);

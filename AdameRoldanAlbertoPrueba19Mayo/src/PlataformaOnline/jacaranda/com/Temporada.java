@@ -110,9 +110,7 @@ public class Temporada implements Comparable<Temporada> {
 		} else
 			throw new SerieException("No se ha encontrado el capitulo anterior.");
 
-//		boolean encontrado = false;
-//		Iterator<String> siguiente = capitulos.iterator();
-//		while(siguiente.hasNext() && !encontrado)
+
 	}
 
 	/**
@@ -187,17 +185,17 @@ public class Temporada implements Comparable<Temporada> {
 	public int compareTo(Temporada o) {////////////////////////////
 		if (o == null)
 			return -1;
-		return -(int) (o.getNotaMedia() - this.getNotaMedia());
+		return (int) (o.getNotaMedia() - this.getNotaMedia());//de esta forma me lo ordena de mayor numero de temporadas a menor, y no hace falta poner el menos, pq yo puse antes el objeto o que el objeto this en el compare
 	}
 
 //	public String imprimirSeries() {
 //		
 //	}
 	
-	public String imprimirCapitulos() {
+	public String imprimirCapitulos(String nombre) {
 		StringBuilder resultado = new StringBuilder();
 		for(String c : capitulos) {
-			resultado.append(c+"\n");
+			resultado.append(nombre +", " + this.nombreTemporada + ", " + c + "\n");//la forma correcta para que saliera como pedía era introduciendo por parámetros el nombre 
 		}
 		return  resultado.toString();
 	}

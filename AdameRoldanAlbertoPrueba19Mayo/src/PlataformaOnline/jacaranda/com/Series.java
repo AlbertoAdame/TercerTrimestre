@@ -38,7 +38,7 @@ public class Series {
 	 * @param serie
 	 * @throws SerieException
 	 */
-	public void annadirTemporada(String nombreSerie, String temporada) throws SerieException {
+	public void annadirTemporada(String nombreSerie, String temporada) throws SerieException {////////
 		if (!mapSeries.containsKey(nombreSerie)) {
 			throw new SerieException("No existe esa serie");
 		}
@@ -149,7 +149,7 @@ public class Series {
 	public String imprimirSeries() {///////////////////////////////
 
 		StringBuilder resultado = new StringBuilder();
-		ArrayList<String> claves = new ArrayList<>(this.mapSeries.keySet());
+		ArrayList<String> claves = new ArrayList<>(this.mapSeries.keySet());//aunque lo tengo hecho con los keySet, y ella lo dijo con values, de la forma en que yo lo he hecho me funciona
 
 		Collections.sort(claves);
 
@@ -168,7 +168,7 @@ public class Series {
 
 			Serie s = mapSeries.get(l);
 
-			resultado.append(mapSeries.get(l).getNombreSerie() + "," + s.imprimirTemporadas());
+			resultado.append(s.imprimirTemporadas());//la forma correcta de hacerlo para que lo mostrara bien era introduciendo el nombre desde la clase serie, no aquí
 		}
 
 		return resultado.toString();
@@ -177,12 +177,11 @@ public class Series {
 	public String imprimirCapitulos() {
 
 		StringBuilder resultado = new StringBuilder();
-		ArrayList<String> claves = new ArrayList<>(this.mapSeries.keySet());
+//		ArrayList<String> claves = new ArrayList<>(this.mapSeries.keySet());
 
-		for (String l : claves) {
-			Serie s = mapSeries.get(l);
+		for (Serie s : this.mapSeries.values()) {
 
-			resultado.append(mapSeries.get(l).getNombreSerie() + "," +s.imprimirCapitulos()+"\n");
+			resultado.append(s.imprimirCapitulos());
 		}
 
 		return resultado.toString();

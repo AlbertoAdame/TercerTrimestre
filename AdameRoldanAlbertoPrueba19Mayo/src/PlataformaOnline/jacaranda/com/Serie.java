@@ -94,7 +94,7 @@ public class Serie implements Comparable<Serie>{
 		Collections.sort(temporadas);
 		StringBuilder resultado = new StringBuilder("\nTemporadas ordenadas por media\n");
 		for (Temporada t : temporadas) {
-			resultado.append(t.getNombreTemporada() + ", " + t.getNumeroCapitulos() + " y " + t.getNotaMedia());
+			resultado.append(t.getNombreTemporada() + ", " + t.getNumeroCapitulos() + " y " + t.getNotaMedia() + "\n");//hemos añadido el \n
 		}
 		return resultado.toString();
 	}
@@ -111,7 +111,7 @@ public class Serie implements Comparable<Serie>{
 		Collections.sort(temporadas, ordenar);
 		StringBuilder resultado = new StringBuilder("\nTemporadas ordenadas por numero capitulos descentende\n");
 		for (Temporada t : temporadas) {
-			resultado.append(t.getNombreTemporada() + ", " + t.getNumeroCapitulos() + " y " + t.getNotaMedia());
+			resultado.append(t.getNombreTemporada() + ", " + t.getNumeroCapitulos() + " y " + t.getNotaMedia()+"\n");//hemos añadido el \n
 		}
 		return resultado.toString();
 	}
@@ -229,13 +229,13 @@ public class Serie implements Comparable<Serie>{
 	public int compareTo(Serie o) {/////////////////
 		if(o==null)
 			return -1;
-		return o.anno-this.anno;//TenÃ­a todos los compares al contrario
+		return o.anno-this.anno;//está bien de esta forma, no recuerdo como lo tenía, pq lo cambié en clase mientras corregia
 	}
 
 	public String imprimirTemporadas() {
 		StringBuilder resultado = new StringBuilder();
 		for(Temporada t : temporadas) {
-			resultado.append(t.getNombreTemporada() + "," +t.getNumeroOpiniones() + ","+ t.getSumaOpiniones() + "," + t.getNumeroOpiniones()+"\n");
+			resultado.append(this.nombreSerie + ", " + t.getNombreTemporada() + "," +t.getNumeroOpiniones() + ","+ t.getSumaOpiniones() + "," + t.getNumeroOpiniones()+"\n");
 		}
 		resultado.append("\n");
 		return resultado.toString();
@@ -245,9 +245,9 @@ public class Serie implements Comparable<Serie>{
 		StringBuilder resultado = new StringBuilder();
 		for(Temporada t : temporadas) {
 
-			resultado.append(t.getNombreTemporada() + "," + t.imprimirCapitulos()+"\n");
+			resultado.append(t.imprimirCapitulos(this.nombreSerie));
 		}
-		resultado.append("\n");
+
 		return resultado.toString();
 	}
 	
