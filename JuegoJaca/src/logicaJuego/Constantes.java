@@ -35,10 +35,10 @@ public class Constantes {
 	
 	public static final int EMPATE=0; //Hay empate ninguno de los dos gana la lucha
 	public static final int GANA_USA_POCIMA= 1; //Gana el jugador y se utiliza pocima del enemigo para que no muera
-	public static final int GANA_DINERO=2; //Gana el jugador y se lleva todo el dinero del enemigo
+	public static final int GANA_DINERO=2; //Gana el jugador y se lleva el total del dinero del enemigo
 	public static final int GANA_MUERE=3; //Gana el jugador y el enemigo muere
 	public static final int PIERDE_USA_POCIMA= 4; //Gana el enemigo y se utiliza pocima del jugador para que no muera
-	public static final int PIERDE_DINERO=5; //Gana el enemigo y se lleva todo el dinero del jugador
+	public static final int PIERDE_DINERO=5; //Gana el enemigo y se lleva el total del dinero del jugador
 	public static final int PIERDE_MUERE=6; //Gana el enemigo y el jugador muere
 	
 	public static final int ROMPE_ROCA_CON_GEMA =0;

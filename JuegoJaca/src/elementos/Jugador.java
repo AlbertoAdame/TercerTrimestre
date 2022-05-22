@@ -1,5 +1,7 @@
 package elementos;
 
+import java.util.Random;
+
 import logicaJuego.Constantes;
 
 public class Jugador extends Element {
@@ -8,7 +10,7 @@ public class Jugador extends Element {
 	private int gemas;
 	private PlayerType player;
 
-	public Jugador(PlayerType player) {
+	public Jugador(PlayerType player){
 		super(ElementType.valueOf(player.name()));
 		this.dinero = 0;
 		this.pociones = 0;
@@ -16,12 +18,16 @@ public class Jugador extends Element {
 		this.player = player;
 	}
 
+	private Random rand() {// Creamos este método privado random para evitar una advertencia de sonar Lint
+		return new Random();
+	}
+
 	public String getNombre() {
 		return player.name();
 	}
 
 	public int getFuerzaParaLuchar() {
-		return (int) (Math.random() * (player.getFuerza()-1)+1);
+		return rand().nextInt(getFuerza());
 	}
 
 	private int getFuerza() {
@@ -33,7 +39,7 @@ public class Jugador extends Element {
 	}
 
 	public int getMagiaParaLuchar() {
-		return (int) (Math.random() * (player.getMagia()-1)+1);
+		return rand().nextInt(getMagia());
 	}
 
 	private int getVelocidad() {
@@ -41,7 +47,7 @@ public class Jugador extends Element {
 	}
 
 	public int getVelocidadParaLuchar() {
-		return (int) (Math.random() * (player.getVelocidad()-1)+1);
+		return rand().nextInt(getVelocidad())+1;
 	}
 
 	public int getDinero() {
@@ -49,7 +55,7 @@ public class Jugador extends Element {
 	}
 
 	public void setDinero(int dinero) throws JugadorException {
-		if (dinero < 0 || dinero > Constantes.DINERO)
+		if (dinero < 0 || dinero > Constantes.NUM_DINERO)
 			throw new JugadorException("Cantidad de dinero no vï¿½lida");
 		this.dinero = dinero;
 	}
@@ -88,7 +94,7 @@ public class Jugador extends Element {
 		int fuerzaOtroJugador = jugador.getFuerzaParaLuchar();
 		int resultado;
 
-		if (fuerzaThisJugador > fuerzaOtroJugador)
+		if (fuerzaThisJugador > fuerzaOtroJugador) {
 			if (jugador.getPociones() > 0) {
 				jugador.setPociones(jugador.getPociones() - 1);
 				resultado = Constantes.GANA_USA_POCIMA;
@@ -98,7 +104,9 @@ public class Jugador extends Element {
 				resultado = Constantes.GANA_DINERO;
 			} else
 				resultado = Constantes.GANA_MUERE;
-		else if (fuerzaThisJugador < fuerzaOtroJugador)
+		}
+
+		else if (fuerzaThisJugador < fuerzaOtroJugador) {
 			if (this.getPociones() > 0) {
 				this.setPociones(this.getPociones() - 1);
 				resultado = Constantes.PIERDE_USA_POCIMA;
@@ -108,6 +116,8 @@ public class Jugador extends Element {
 				resultado = Constantes.PIERDE_DINERO;
 			} else
 				resultado = Constantes.PIERDE_MUERE;
+		}
+		
 		else {
 			resultado = Constantes.EMPATE;
 		}
@@ -123,25 +133,34 @@ public class Jugador extends Element {
 		} else {
 			if (this.getMagiaParaLuchar() > 4)
 				resultado = Constantes.GANA_A_LA_ROCA;
-			if (this.getMagiaParaLuchar() <= 4)
+			else // aquí tuve problemas ya que puse un else if con getMagiaParaLuchar, pero eso
+					// me estaba generando un número distinto cada vez
 				resultado = Constantes.PIERDE_A_LA_ROCA;
 		}
 		return resultado;
 	}
 
 	public void encuentraDinero() throws JugadorException {
+		if (this.getDinero() > Constantes.NUM_DINERO)
+			throw new JugadorException("No puede tener más dinero del que existe en el juego");
 		this.setDinero(this.getDinero() + 1);
 
 	}
 
 	public void encuentraPocion() throws JugadorException {
+		if (this.getPociones() > Constantes.NUM_POCIONES)
+			throw new JugadorException("No puede tener más pociones del que existe en el juego");
 		this.setPociones(this.getPociones() + 1);
 
 	}
 
 	public void encuentraGema() throws JugadorException {
+		if (this.getGemas() > Constantes.NUM_GEMAS)
+			throw new JugadorException("No puede tener más gemas del que existe en el juego");
 		this.setGemas(this.getGemas() + 1);
 
 	}
+	
+	
 
 }

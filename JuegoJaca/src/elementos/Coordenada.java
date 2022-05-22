@@ -1,6 +1,7 @@
 package elementos;
 
 import java.util.Objects;
+import java.util.Random;
 
 import logicaJuego.Constantes;
 
@@ -8,12 +9,11 @@ public class Coordenada {
 	
 	private int x;
 	private int y;
-	public Coordenada clone;
 	
 	public Coordenada() {
 		super();
-		this.x = (int) (Math.random()*Constantes.TAMANNO);
-		this.y = (int) (Math.random()*Constantes.TAMANNO);
+		this.x = new Random().nextInt(Constantes.TAMANNO);
+		this.y = new Random().nextInt(Constantes.TAMANNO);
 	}
 	
 	public Coordenada(int x, int y) {
@@ -26,6 +26,10 @@ public class Coordenada {
 		this.x = x;
 		this.y = y;
 	}
+	
+	public Coordenada CoordenadaClonado() {
+		return new Coordenada(this.x, this.y);
+	}
 
 	public int getX() {
 		return x;
@@ -37,7 +41,7 @@ public class Coordenada {
 
 	public boolean goRight() {
 		boolean resultado=false;
-		if(this.x!=Constantes.TAMANNO) {
+		if(this.x < Constantes.TAMANNO) {
 			this.x++;
 			resultado=true;
 		}
@@ -47,7 +51,7 @@ public class Coordenada {
 	
 	public boolean goLeft() {
 		boolean resultado=false;
-		if(this.x!=0) {
+		if(this.x>0) {
 			this.x--;
 			resultado=true;
 		}
@@ -57,7 +61,7 @@ public class Coordenada {
 	public boolean goUp() {
 		
 		boolean resultado=false;
-		if(this.y!=0) {
+		if(this.y>0) {
 			this.y--;
 			resultado=true;
 		}
@@ -66,20 +70,13 @@ public class Coordenada {
 	
 	public boolean goDown() {
 		boolean resultado=false;
-		if(this.y!=Constantes.TAMANNO) {
+		if(this.y<Constantes.TAMANNO) {
 			this.y++;
 			resultado=true;
 		}
 		return resultado;
 	}
 
-	@Override
-	protected Object clone() throws CloneNotSupportedException {
-		Coordenada resultado = new Coordenada();
-		resultado.x=this.x;
-		resultado.y=this.y;
-		return resultado;
-	}
 
 	@Override
 	public int hashCode() {
