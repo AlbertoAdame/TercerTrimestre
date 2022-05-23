@@ -2,7 +2,6 @@ package elementosTest;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
@@ -127,7 +126,7 @@ class JugadorTest {
 		assertEquals(expected, actual);
 
 	}
-
+	
 	@Test
 	public void testSetGemaException() throws JugadorException {
 		Jugador j = new Jugador(PlayerType.OGRO);

@@ -18,12 +18,10 @@ public class Juego {
 		this.tablero = new HashMap<>();
 		this.coordenadaJugadores = new ArrayList<>();
 		crearTablero();
-		int contador = 0;
 		for (int i = 0; i < jugadores.length; i++) {
 			crearJugador(jugadores[i]);
 		}
 
-//		this.dado = dado;
 	}
 
 	private void crearTablero() {
@@ -197,8 +195,8 @@ public class Juego {
 	}
 
 	private Coordenada getNextPosition(char direction) throws JuegoException {
-		Coordenada c = coordenadaJugadores.get(jugadorJuega);// Porque no queremos cambiar la posicion real
-		c = c.CoordenadaClonado();
+		Coordenada c = coordenadaJugadores.get(jugadorJuega);
+		c = c.CoordenadaClonado();// Creamos un clon porque no queremos cambiar la posicion real
 		if (direction == 'N') {
 			c.goUp();
 		} else if (direction == 'S') {
