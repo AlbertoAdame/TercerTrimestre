@@ -41,7 +41,7 @@ public class Coordenada {
 
 	public boolean goRight() {
 		boolean resultado=false;
-		if(this.x < Constantes.TAMANNO) {
+		if(this.x < Constantes.TAMANNO-1) {
 			this.x++;
 			resultado=true;
 		}
@@ -70,7 +70,7 @@ public class Coordenada {
 	
 	public boolean goDown() {
 		boolean resultado=false;
-		if(this.y<Constantes.TAMANNO) {
+		if(this.y<Constantes.TAMANNO-1) {
 			this.y++;
 			resultado=true;
 		}
