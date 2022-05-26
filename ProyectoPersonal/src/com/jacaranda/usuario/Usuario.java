@@ -16,6 +16,21 @@ public abstract class Usuario {
 	public String getLogin() {
 		return login;
 	}
+	
+	
+
+	public String getPass() {
+		return pass;
+	}
+	
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public void setPass(String pass) {//será public pq necesito cambiar información en el main de las cuentas
+		this.pass = pass;
+	}
 
 	public boolean cambiarPass(String pass, String nuevaPass) {
 		boolean resultado = false;
@@ -54,5 +69,12 @@ public abstract class Usuario {
 		Usuario other = (Usuario) obj;
 		return Objects.equals(login, other.login);
 	}
+
+	@Override
+	public String toString() {
+		return "Usuario [login=" + login + ", pass=" + pass + "]";
+	}
+	
+	
 
 }
