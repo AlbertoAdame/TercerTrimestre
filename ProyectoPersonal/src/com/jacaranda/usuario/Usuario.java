@@ -18,10 +18,6 @@ public abstract class Usuario {
 	}
 	
 	
-
-	public String getPass() {
-		return pass;
-	}
 	
 
 	public void setLogin(String login) {

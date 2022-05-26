@@ -1,160 +1,319 @@
 package com.jacaranda.usuario;
 
-
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Main {
 
 	public static Scanner teclado = new Scanner(System.in);
-	public static HashSet<Premiun> premiuns = new HashSet<>();//SOLO USAREMOS ESTAS COLLECTIONS PARA OBTENER LISTADO DE USUARIO
-	public static HashSet<Free> frees = new HashSet<>(); 
+	public static HashSet<Premiun> premiuns = new HashSet<>();// SOLO USAREMOS ESTAS COLLECTIONS PARA OBTENER LISTADO DE
+																// USUARIO
+	public static HashSet<Free> frees = new HashSet<>();
 
 	public static void main(String[] args) throws SQLException {
 
-		Connection conexion=null;
+		Connection conexion = null;
 
 		Usuario usuario = null;
-		
+
 //		SELECT * FROM USUARIO WHERE LOGIN = 'Alberto';
 //
 //		SELECT * FROM USUARIO WHERE NUMEROIMAGENES =-1;
 //		SELECT * FROM USUARIO WHERE NUMEROIMAGENES !=-1;
 
 		try {
-			conexion = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/ORCLCDB.localdomain", "dummy","dummy");
+			conexion = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/ORCLCDB.localdomain", "dummy",
+					"dummy");
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-			Statement instruccionUno= conexion.createStatement();
-			ResultSet resultado = instruccionUno.executeQuery("SELECT * FROM USUARIO WHERE NUMEROIMAGENES =-1");
-			while(resultado.next()) {
-				Free f = new Free(resultado.getString("LOGIN"), resultado.getString("PASS"));
-				System.out.println(f.toString());
-			}
-			
-			int opc = 0;
-			do {
-				menu();
-				opc = leerInt("Que quieres hacer: ");
+		Statement instruccion = conexion.createStatement();
+		ResultSet resultado = instruccion.executeQuery("SELECT * FROM USUARIO WHERE NUMEROIMAGENES =-1");
+		while (resultado.next()) {
+			Free f = new Free(resultado.getString("LOGIN"), resultado.getString("PASS"));
+			System.out.println(f.toString());
+			frees.add(f);
+		}
 
-				switch (opc) {
-				case 1:
+		instruccion = conexion.createStatement();
+		resultado = instruccion.executeQuery("SELECT * FROM USUARIO WHERE NUMEROIMAGENES !=-1");
+		while (resultado.next()) {
+			Premiun p = new Premiun(resultado.getString("LOGIN"), resultado.getString("PASS"));
+			System.out.println(p.toString());
+			premiuns.add(p);
+		}
 
-					char valor;
-					do {
-						valor = leerChar("¿Va ser tipo Premiun o Free? (P/F)");
-					} while (valor != 'F' || valor != 'P' || valor != 'f' || valor != 'p');
+		int opc = 0;
+		do {
+			menu();
+			opc = leerInt("Que quieres hacer: ");
 
-					if (valor == 'P' || valor == 'p') {
+			switch (opc) {
+			case 1:// registrarse
 
-						String login = leerString("Dame tu nombre de usuario: ");
+				char valor;
+				do {
+					valor = leerChar("¿Va ser tipo Premiun o Free? (P/F)");
+				} while (valor != 'F' || valor != 'P' || valor != 'f' || valor != 'p');
 
-						while (login.isBlank()) {
-							login = leerString("Dame tu nombre de usuario: ");
-						}
-
-						String pass = leerString("Dame tu nueva contraseña: ");
-
-						while (!pass.isBlank()) {
-							pass = leerString("Dame tu nueva contraseña: ");
-						}
-						
-						usuario = new Premiun(login,pass);
-						
-						Statement instruccion = conexion.createStatement();
-						String query = "SELECT * FROM USUARIO WHERE LOGIN = ("+login+")";
-						
-
-						if (premiuns.contains(usuario)) {
-							usuario=null;
-							System.out.println("Esta cuenta ya existe.");
-						} else {
-							premiuns.add((Premiun) usuario);
-							//añadir tb en la base de datos
-							
-							//mi programa ti
-							
-							//hacer el de registrar, borrarte la cuenta, modificar una sesion, y un switch que te de una lista de datos
-						}
-
-					}
-
-					else {
-
-						String login = leerString("Dame tu nombre de usuario: ");
-
-						while (login.isBlank()) {
-							login = leerString("Dame tu nombre de usuario: ");
-						}
-
-						String pass = leerString("Dame tu nueva contraseña: ");
-
-						while (!pass.isBlank()) {
-							pass = leerString("Dame tu nueva contraseña: ");
-						}
-
-						usuario = new Free(login,pass);
-
-						if (frees.contains(usuario)) {
-							usuario=null;
-							System.out.println("Esta cuenta ya existe.");
-						} else {
-							frees.add((Free) usuario);
-						}
-
-					}
-
-					break;
-				case 2:
+				if (valor == 'P' || valor == 'p') {
 
 					String login = leerString("Dame tu nombre de usuario: ");
 
 					while (login.isBlank()) {
-						System.out.println("No puede tener un usuario vacío.");
 						login = leerString("Dame tu nombre de usuario: ");
 					}
 
 					String pass = leerString("Dame tu nueva contraseña: ");
 
 					while (!pass.isBlank()) {
-						System.out.println("No puede tener una contraseña vacío.");
 						pass = leerString("Dame tu nueva contraseña: ");
 					}
 
 					usuario = new Premiun(login, pass);
-					
 
-//					if (premiuns.contains(usuario)) {
-//						tipo_cuenta = 1;
-//						p.setLogin(login);
-//						p.setPass(pass);
-//					} else if (frees.contains(usuario)) {
-//						tipo_cuenta = 0;
-//						f.setLogin(login);
-//						f.setPass(pass);
-//					}
+					instruccion = conexion.createStatement();
+					resultado = instruccion.executeQuery("SELECT * FROM USUARIO WHERE LOGIN = (" + login + ")");
 
-					break;
-				case 3:// Hacerse Premiun" Simulará que pagas la inscripcion, y pasas de free a premiun
+					if (resultado.getString("LOGIN").equals(login)) {// ver si funciona, si no, poner que no sea null
+						usuario = null;
+						System.out.println("Esta cuenta ya existe.");
+					} else {
+						premiuns.add((Premiun) usuario);
 
-					
-					break;
-				case 4:
+						instruccion = conexion.createStatement();
+						resultado = instruccion
+								.executeQuery("INSERT INTO USUARIO VALUES ('" + login + "','" + pass + "',0)");
 
-					break;
+						// añadir tb en la base de datos
 
-				default:
-					break;
+						// mi programa ti
+
+						// hacer el de registrar, borrarte la cuenta, modificar una sesion, y un switch
+						// que te de una lista de datos
+					}
+
 				}
 
-			} while (usuario != null);
+				else {
+
+					String login = leerString("Dame tu nombre de usuario: ");
+
+					while (login.isBlank()) {
+						login = leerString("Dame tu nombre de usuario: ");
+					}
+
+					String pass = leerString("Dame tu nueva contraseña: ");
+
+					while (!pass.isBlank()) {
+						pass = leerString("Dame tu nueva contraseña: ");
+					}
+
+					usuario = new Free(login, pass);
+
+					instruccion = conexion.createStatement();
+					resultado = instruccion.executeQuery("SELECT * FROM USUARIO WHERE LOGIN = (" + login + ")");
+
+					if (resultado.getString("LOGIN").equals(login)) {// comprobar como arriba
+						usuario = null;
+						System.out.println("Esta cuenta ya existe.");
+					} else {
+						frees.add((Free) usuario);
+
+						instruccion = conexion.createStatement();
+						resultado = instruccion
+								.executeQuery("INSERT INTO USUARIO VALUES ('" + login + "','" + pass + "',-1)");
+					}
+
+				}
+
+				break;
+			case 2:// login
+
+				String login = leerString("Dame tu nombre de usuario: ");
+
+				while (login.isBlank()) {
+					System.out.println("No puede tener un usuario vacío.");
+					login = leerString("Dame tu nombre de usuario: ");
+				}
+
+				String pass = leerString("Dame tu nueva contraseña: ");
+
+				while (!pass.isBlank()) {
+					System.out.println("No puede tener una contraseña vacío.");
+					pass = leerString("Dame tu nueva contraseña: ");
+				}
+
+				usuario = new Premiun(login, pass);
+
+				instruccion = conexion.createStatement();
+				resultado = instruccion.executeQuery("SELECT * FROM USUARIO WHERE LOGIN = (" + login + ")");
+
+				if (resultado.getString("LOGIN").equals(login) && resultado.getInt("NUMEROIMAGENES") != -1) {// comprobar
+																												// como
+																												// arriba,
+																												// comprobar
+																												// si
+																												// NUMEROIMAGENES
+																												// es
+																												// correcto
+					usuario = new Premiun(resultado.getString("LOGIN"), resultado.getString("LOGIN"));
+					System.out.println("Logueado correctamente. Usuario premiun.");
+				} else if (resultado.getString("LOGIN").equals(login) && resultado.getInt("NUMEROIMAGENES") == -1) {// comprobar
+																													// como
+																													// arriba,
+																													// comprobar
+																													// si
+																													// NUMEROIMAGENES
+																													// es
+																													// correcto
+					usuario = new Free(resultado.getString("LOGIN"), resultado.getString("LOGIN"));
+					System.out.println("Logueado correctamente. Usuario Free.");
+
+				}
+
+				break;
+			case 3:// Modificar contraseña
+				boolean salir = false;
+				if (usuario == null) {
+					System.out.println("Debes loguearte o registrarte antes.");
+				} else {
+					instruccion = conexion.createStatement();
+					resultado = instruccion
+							.executeQuery("SELECT * FROM USUARIO WHERE LOGIN = (" + usuario.getLogin() + ")");
+
+					String passOld = leerString("Introduce la contraseña antigua: ");
+
+					if (passOld.equals(resultado.getString("PASS"))) {
+						do {
+							String passNew = leerString("Introduce la nueva contraseña: ");
+							if (passOld.equals(passNew)) {
+								System.out.println("Error no puedes elegir la misma contraseña.");
+
+							} else {
+								salir = true;
+								
+								
+								instruccion = conexion.createStatement();
+								resultado = instruccion
+										.executeQuery("UPDATE USUARIO SET PASS = '" + passNew + "' WHERE LOGIN = '"+ usuario.getLogin() + "'");
+								
+								
+								if(resultado.getInt("NUMEROIMAGENES")==-1){//COMPROBAR QUE SE ESCRIBE ASI NUMERO IMAGENES
+									boolean encontrado = false;
+									
+									Iterator<Free> siguiente = frees.iterator();
+									while (siguiente.hasNext() && !encontrado) {
+										Free fre = siguiente.next();
+										if (usuario.equals(fre)) {
+											encontrado = true;
+											fre.setPass(passNew);
+
+										}
+						
+									}
+									
+								}
+								else if(resultado.getInt("NUMEROIMAGENES")!=-1){//COMPROBAR QUE SE ESCRIBE ASI NUMERO IMAGENES
+									boolean encontrado = false;
+									
+									Iterator<Premiun> siguiente = premiuns.iterator();
+									while (siguiente.hasNext() && !encontrado) {
+										Premiun pre = siguiente.next();
+										if (usuario.equals(pre)) {
+											encontrado = true;
+											pre.setPass(passNew);
+
+										}
+						
+									}
+									
+								}
+								
+							}
+								
+								
+						} while (!salir);
+
+					}
+
+				}
+
+				break;
+			case 4:// Borrar Cuenta
+
+				break;
+
+			case 5:// Ver que cuenta hay actualmente
+
+				if (usuario == null) {
+					System.out.println("No hay ninguna cuenta asociada.");
+				} else {
+					System.out.println("Usuario: " + usuario.getLogin());
+				}
+
+				break;
+
+			case 6:// Listar usuario premiuns
+
+				System.out.println("Premiun\n");
+				instruccion = conexion.createStatement();
+				resultado = instruccion.executeQuery("SELECT * FROM USUARIO WHERE NUMEROIMAGENES !=-1");
+				while (resultado.next()) {
+					Premiun p = new Premiun(resultado.getString("LOGIN"), resultado.getString("PASS"));
+					System.out.println(p.toString());
+
+				}
+
+				break;
+
+			case 7:// Listar usuario free
+
+				instruccion = conexion.createStatement();
+				resultado = instruccion.executeQuery("SELECT * FROM USUARIO WHERE NUMEROIMAGENES =-1");
+				System.out.println("Free\n");
+				while (resultado.next()) {
+					Free f = new Free(resultado.getString("LOGIN"), resultado.getString("PASS"));
+					System.out.println(f.toString());
+
+				}
+
+				break;
+
+			case 8:// Listar todos los usuarios
+
+				instruccion = conexion.createStatement();
+				resultado = instruccion.executeQuery("SELECT * FROM USUARIO WHERE NUMEROIMAGENES =-1");
+				System.out.println("Free\n");
+				while (resultado.next()) {
+					Free f = new Free(resultado.getString("LOGIN"), resultado.getString("PASS"));
+					System.out.println(f.toString());
+
+				}
+
+				System.out.println("Premiun\n");
+				instruccion = conexion.createStatement();
+				resultado = instruccion.executeQuery("SELECT * FROM USUARIO WHERE NUMEROIMAGENES !=-1");
+				while (resultado.next()) {
+					Premiun p = new Premiun(resultado.getString("LOGIN"), resultado.getString("PASS"));
+					System.out.println(p.toString());
+
+				}
+
+				break;
+
+			default:
+				System.out.println("No has introducido una opcion válida");
+				break;
+			}
+
+		} while (opc != 9);
 
 //			"1.Registrarse"
 //			+ "\n2.Login"
@@ -162,12 +321,8 @@ public class Main {
 //			+ "\n4.Buscar foto"
 //			+ "\n5.Salir");
 
-		
-		
-		
-		
-		//******************************************+
-		
+		// ******************************************+
+
 //		String pagado = leerString("¿Has pagado la inscripcion? (SI/NO)").toUpperCase();
 //		if (tipo_cuenta == -1)
 //			System.out.println("No estas logueado");
@@ -214,8 +369,8 @@ public class Main {
 		System.out.println(texto);
 		return teclado.nextLine().charAt(0);
 	}
-	
+
 	public static void addUsuario(Usuario usuario) {
-		
+
 	}
 }
