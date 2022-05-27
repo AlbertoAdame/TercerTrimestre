@@ -229,7 +229,7 @@ public class Serie implements Comparable<Serie>{
 	public int compareTo(Serie o) {/////////////////
 		if(o==null)
 			return -1;
-		return o.anno-this.anno;//está bien de esta forma, no recuerdo como lo tenía, pq lo cambié en clase mientras corregia
+		return o.getAnno()-this.getAnno();
 	}
 
 	public String imprimirTemporadas() {

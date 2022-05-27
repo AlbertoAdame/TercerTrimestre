@@ -16,11 +16,13 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+
+import com.jacaranda.casetas.Calle;
 import com.jacaranda.casetas.Caseta;
 
 public class Main {
 	public static Scanner teclado = new Scanner(System.in);
-	public static ArrayList<Caseta> casetas = new ArrayList<>();//Esto tiene que ser una lista de calles
+	public static ArrayList<Calle> calles = new ArrayList<>();// Esto tiene que ser una lista de calles
 
 	public static void main(String[] args) {
 
@@ -33,7 +35,7 @@ public class Main {
 			switch (opc) {
 			case 1: {
 				String calle = leerString("Dame el nombre de la calle: ").toUpperCase();
-				for (Caseta c : casetas) {
+				for (Calle c : calles) {
 					if (c.getCalle().equalsIgnoreCase(calle))
 						System.out.println(c);
 				}
@@ -41,36 +43,33 @@ public class Main {
 			}
 
 			case 2: {// "2. Mostrar todas las casetas de tipo familiar. \r\n"
-				for (Caseta c : casetas) {
-					if (c.getClase().equals("FAMILIAR"))
-						System.out.println(c);
+				for (Calle c : calles) {
+					System.out.println(c.casetasFamiliares());
 				}
 
 				break;
 			}
 
 			case 3: {// 3. Mostrar todas las casetas de tipo Distrito \r\n"
-				for (Caseta c : casetas) {
-					if (c.getClase().equals("DISTRITO"))
-						System.out.println(c);
+				for (Calle c : calles) {
+					System.out.println(c.casetasDistrito());
 				}
 				break;
 			}
 
 			case 4: {// Mostrar todas las casetas que no sean ni familiares ni distritos. \r\n"
-				for (Caseta c : casetas) {
-					if (!c.getClase().equals("DISTRITO") && !c.getClase().equals("FAMILIAR"))
-						System.out.println(c);
+				for (Calle c : calles) {
+					System.out.println(c.casetasNoFamiliaresNoDistrito());
 				}
 				break;
 			}
 
 			case 5: {// "5. Mostrar para cada una de las calles del recinto ferial el n�mero de
 						// casetas de tipo familiar que existen. \r\n"
-				System.out.println(contarPorCalles("FAMILIAR"));// Me he creado un m�todo para hacer este proceso, ya
-																// que lo uso dos veces, ademas creo que seria mas
-																// optimo si hubiera cleado una clase "Calle", pero no
-																// estoy seguro
+
+				for (Calle c : calles) {
+					System.out.println(c.getCalle() + ": " + c.contarFamiliares());
+				}
 
 				break;
 			}
@@ -78,10 +77,9 @@ public class Main {
 			case 6: {// "6. Mostrar para cada una de las calles del recinto ferial el n�mero de
 						// casetas de tipo Distrito que existen. \r\n"
 
-				System.out.println(contarPorCalles("DISTRITO"));// Me he creado un m�todo para hacer este proceso, ya
-																// que lo uso dos veces, ademas creo que seria mas
-																// optimo si hubiera cleado una clase "Calle", pero no
-																// estoy seguro
+				for (Calle c : calles) {
+					System.out.println(c.getCalle() + ": " + c.contarDistrito());
+				}
 
 				break;
 			}
@@ -89,25 +87,24 @@ public class Main {
 			case 7: {// 7. Eliminar una caseta
 				String idCaseta = leerString("Dame el id de la caseta: ");
 
-				Iterator<Caseta> siguiente = casetas.iterator();
+				Caseta ca = new Caseta(null, null, null, null, idCaseta);
 
 				boolean encontrado = false;
+				Iterator<Calle> siguiente = calles.iterator();
 				while (siguiente.hasNext() && !encontrado) {
-					Caseta c = siguiente.next();
-					if (c.getId().equalsIgnoreCase(idCaseta)) {
-						casetas.remove(c);
+					Calle c = siguiente.next();
+					if (c.borrarCaseta(ca)) {
 						encontrado = true;
-						System.out.println("\nBorrado satisfactoriamente.");
-					} 
+						System.out.println("Se ha borrado la calle existosamente.");
+					}
 
-				}if(!encontrado)
-					System.out.println("\nEsta id no existe.");
+				}
 
 				break;
 			}
 
 			case 8: {
-				escribirFichero();
+//				escribirFichero();
 				System.out.println("\nGracias");
 				break;
 			}
@@ -117,25 +114,25 @@ public class Main {
 
 	}
 
-	public static String contarPorCalles(String clase) {
-		HashMap<String, Integer> listaCalles = new HashMap<>();
-		for (Caseta c : casetas) {
-			Integer numero = 0;
-			if (listaCalles.containsKey(c.getCalle())) {
-				if (c.getClase().equals(clase)) {
-					numero = listaCalles.get(c.getCalle());
-					listaCalles.put(c.getCalle(), numero + 1);
-				}
-
-			} else if (c.getClase().equals(clase)) {
-				listaCalles.put(c.getCalle(), 1);
-			} else
-				listaCalles.put(c.getCalle(), 0);
-
-		}
-
-		return listaCalles.toString();
-	}
+//	public static String contarPorCalles(String clase) {
+//		HashMap<String, Integer> listaCalles = new HashMap<>();
+//		for (Calle c : calles) {
+//			Integer numero = 0;
+//			if (listaCalles.containsKey(c.getCalle())) {
+//				if (c.getClase().equals(clase)) {
+//					numero = listaCalles.get(c.getCalle());
+//					listaCalles.put(c.getCalle(), numero + 1);
+//				}
+//
+//			} else if (c.getClase().equals(clase)) {
+//				listaCalles.put(c.getCalle(), 1);
+//			} else
+//				listaCalles.put(c.getCalle(), 0);
+//
+//		}
+//
+//		return listaCalles.toString();
+//	}
 
 	public static void menu() {
 		System.out.println("\n1. Mostrar todas las casetas existentes en una calle. \r\n"
@@ -160,7 +157,8 @@ public class Main {
 	public static void leerFichero() {
 		File fileLectura = new File("ficheros//casetasferia.xml");
 
-		Caseta c = null;
+		Calle c = null;
+		Caseta ca = null;
 		String titulo = "";
 		String calle = "";
 		String numero = "";
@@ -178,13 +176,13 @@ public class Main {
 			doc.getDocumentElement().normalize();
 
 			// Tenemos que obtener la lista de nodos
-			NodeList listaCasetas = doc.getElementsByTagName("DatosLeidos");
+			NodeList listaCalles = doc.getElementsByTagName("DatosLeidos");
 
 			// Y recorrer los nodos
-			for (int temp = 0; temp < listaCasetas.getLength(); temp++) {
+			for (int temp = 0; temp < listaCalles.getLength(); temp++) {
 
 				// Cogemos el nodo del padre
-				Node hijo = listaCasetas.item(temp);
+				Node hijo = listaCalles.item(temp);
 
 				// Si el nodo es de tipo elemento, lo obtenemos
 				if (hijo.getNodeType() == Node.ELEMENT_NODE) {
@@ -240,10 +238,20 @@ public class Main {
 
 //					System.out.println("\n");
 
-					c = new Caseta(titulo, calle, numero, modulos, clase, entidad, id, idCalle);
-					if (!c.getTitulo().equals("")) {
-						casetas.add(c);
+					c = new Calle(calle, numero, idCalle);
+					if(!calles.contains(c)) {
+						calles.add(c);
 					}
+					
+					ca = new Caseta(titulo, modulos, clase, entidad, id);
+					for(Calle cal : calles) {
+						if(cal.getIdCalle().equals(idCalle))
+							c.addCaseta(ca);
+					}
+					
+
+					
+					
 
 				}
 
@@ -255,29 +263,29 @@ public class Main {
 
 	}
 
-	public static void escribirFichero() {
-
-		File fileEscritura = new File("ficheros//casetasferia.xml");
-
-		try {
-			DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
-			DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
-			// El documento que vamos a crear
-			Document docEscritura = docBuilder.parse(fileEscritura);
-
-//			Element rootElement = docEscritura.createElement("Primero"); Esto lo he tenido que quitar pq cuando me escribia el xml no me lo leia despues
-//			((Node) docEscritura).appendChild(rootElement);
-
-			TransformerFactory transformerFactory = TransformerFactory.newInstance();
-			Transformer transformer = transformerFactory.newTransformer();
-			DOMSource source = new DOMSource(docEscritura);
-			StreamResult result = new StreamResult(fileEscritura);
-			transformer.transform(source, result);
-
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
-
-	}
+//	public static void escribirFichero() {
+//
+//		File fileEscritura = new File("ficheros//casetasferia.xml");
+//
+//		try {
+//			DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+//			DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+//			// El documento que vamos a crear
+//			Document docEscritura = docBuilder.parse(fileEscritura);
+//
+////			Element rootElement = docEscritura.createElement("Primero"); Esto lo he tenido que quitar pq cuando me escribia el xml no me lo leia despues
+////			((Node) docEscritura).appendChild(rootElement);
+//
+//			TransformerFactory transformerFactory = TransformerFactory.newInstance();
+//			Transformer transformer = transformerFactory.newTransformer();
+//			DOMSource source = new DOMSource(docEscritura);
+//			StreamResult result = new StreamResult(fileEscritura);
+//			transformer.transform(source, result);
+//
+//		} catch (Exception e) {
+//			System.out.println(e.getMessage());
+//		}
+//
+//	}
 
 }

@@ -185,7 +185,7 @@ public class Temporada implements Comparable<Temporada> {
 	public int compareTo(Temporada o) {////////////////////////////
 		if (o == null)
 			return -1;
-		return (int) (o.getNotaMedia() - this.getNotaMedia());//de esta forma me lo ordena de mayor numero de temporadas a menor, y no hace falta poner el menos, pq yo puse antes el objeto o que el objeto this en el compare
+		return -(int) (this.getNotaMedia() - o.getNotaMedia());
 	}
 
 //	public String imprimirSeries() {

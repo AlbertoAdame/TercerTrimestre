@@ -149,12 +149,12 @@ public class Series {
 	public String imprimirSeries() {///////////////////////////////
 
 		StringBuilder resultado = new StringBuilder();
-		ArrayList<String> claves = new ArrayList<>(this.mapSeries.keySet());//aunque lo tengo hecho con los keySet, y ella lo dijo con values, de la forma en que yo lo he hecho me funciona
+//		ArrayList<String> claves = new ArrayList<>(this.mapSeries.values());
 
-		Collections.sort(claves);
+//		Collections.sort(claves);
 
-		for (String l : claves) {
-			resultado.append(l + "," + mapSeries.get(l).getAnno() + "," + mapSeries.get(l).getTema() + "\n");//no pedía numero capitulos, pedía tema
+		for (Serie l : this.mapSeries.values()) {
+			resultado.append(l.getNombreSerie() + "," + l.getAnno() + "," + l.getTema() + "\n");//no pedía numero capitulos, pedía tema
 		}
 
 		return resultado.toString();
@@ -162,11 +162,11 @@ public class Series {
 
 	public String imprimirTemporada() {
 		StringBuilder resultado = new StringBuilder();
-		ArrayList<String> claves = new ArrayList<>(this.mapSeries.keySet());
+//		ArrayList<String> claves = new ArrayList<>(this.mapSeries.keySet());
 
-		for (String l : claves) {
+		for (Serie l : this.mapSeries.values()) {
 
-			Serie s = mapSeries.get(l);
+			Serie s = l;
 
 			resultado.append(s.imprimirTemporadas());//la forma correcta de hacerlo para que lo mostrara bien era introduciendo el nombre desde la clase serie, no aqu�
 		}
