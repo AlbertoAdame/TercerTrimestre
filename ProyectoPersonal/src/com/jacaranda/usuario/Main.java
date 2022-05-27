@@ -26,6 +26,8 @@ public class Main {
 //
 //		SELECT * FROM USUARIO WHERE NUMEROIMAGENES =-1;
 //		SELECT * FROM USUARIO WHERE NUMEROIMAGENES !=-1;
+		
+//		USUARIO DE PRUEBA = Alberto CONTRASEÑA: pass
 
 		try {
 			conexion = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/ORCLCDB.localdomain", "dummy",
@@ -37,7 +39,7 @@ public class Main {
 		ResultSet resultado = instruccion.executeQuery("SELECT * FROM USUARIO WHERE NUMEROIMAGENES =-1");
 		while (resultado.next()) {
 			Free f = new Free(resultado.getString("LOGIN"), resultado.getString("PASS"));
-			System.out.println(f.toString());
+//			System.out.println(f.toString());
 			frees.add(f);
 		}
 
@@ -45,7 +47,7 @@ public class Main {
 		resultado = instruccion.executeQuery("SELECT * FROM USUARIO WHERE NUMEROIMAGENES !=-1");
 		while (resultado.next()) {
 			Premiun p = new Premiun(resultado.getString("LOGIN"), resultado.getString("PASS"));
-			System.out.println(p.toString());
+//			System.out.println(p.toString());
 			premiuns.add(p);
 		}
 
@@ -60,7 +62,7 @@ public class Main {
 				char valor;
 				do {
 					valor = leerChar("¿Va ser tipo Premiun o Free? (P/F)");
-				} while (valor != 'F' || valor != 'P' || valor != 'f' || valor != 'p');
+				} while (valor != 'F' && valor != 'P' && valor != 'f' && valor != 'p');
 
 				if (valor == 'P' || valor == 'p') {
 
@@ -72,16 +74,18 @@ public class Main {
 
 					String pass = leerString("Dame tu nueva contraseña: ");
 
-					while (!pass.isBlank()) {
+					while (pass.isBlank()) {
 						pass = leerString("Dame tu nueva contraseña: ");
 					}
 
 					usuario = new Premiun(login, pass);
 
 					instruccion = conexion.createStatement();
-					resultado = instruccion.executeQuery("SELECT * FROM USUARIO WHERE LOGIN = (" + login + ")");
+//					System.out.println("SELECT * FROM USUARIO WHERE LOGIN = '" + login + "'");
+					resultado = instruccion.executeQuery("SELECT count(*) FROM USUARIO WHERE LOGIN = '" + login + "'");
+					resultado.next();
 
-					if (resultado.getString("LOGIN").equals(login)) {// ver si funciona, si no, poner que no sea null
+					if (resultado.getInt(1) != 0) {
 						usuario = null;
 						System.out.println("Esta cuenta ya existe.");
 					} else {
@@ -90,18 +94,13 @@ public class Main {
 						instruccion = conexion.createStatement();
 						resultado = instruccion
 								.executeQuery("INSERT INTO USUARIO VALUES ('" + login + "','" + pass + "',0)");
+						System.out.println("Cuenta creada satisfactoriamente\n");
 
-						// añadir tb en la base de datos
-
-						// mi programa ti
-
-						// hacer el de registrar, borrarte la cuenta, modificar una sesion, y un switch
-						// que te de una lista de datos
 					}
 
 				}
 
-				else {
+				else {//Esta opcion es para las cuentas frees
 
 					String login = leerString("Dame tu nombre de usuario: ");
 
@@ -111,16 +110,17 @@ public class Main {
 
 					String pass = leerString("Dame tu nueva contraseña: ");
 
-					while (!pass.isBlank()) {
+					while (pass.isBlank()) {
 						pass = leerString("Dame tu nueva contraseña: ");
 					}
 
 					usuario = new Free(login, pass);
 
 					instruccion = conexion.createStatement();
-					resultado = instruccion.executeQuery("SELECT * FROM USUARIO WHERE LOGIN = (" + login + ")");
+					resultado = instruccion.executeQuery("SELECT COUNT(*) FROM USUARIO WHERE LOGIN = '" + login + "'");
+					resultado.next();
 
-					if (resultado.getString("LOGIN").equals(login)) {// comprobar como arriba
+					if (resultado.getInt(1) != 0) {// comprobar como arriba
 						usuario = null;
 						System.out.println("Esta cuenta ya existe.");
 					} else {
@@ -129,6 +129,7 @@ public class Main {
 						instruccion = conexion.createStatement();
 						resultado = instruccion
 								.executeQuery("INSERT INTO USUARIO VALUES ('" + login + "','" + pass + "',-1)");
+						System.out.println("Cuenta creada satisfactoriamente\n");
 					}
 
 				}
@@ -145,7 +146,7 @@ public class Main {
 
 				String pass = leerString("Dame tu nueva contraseña: ");
 
-				while (!pass.isBlank()) {
+				while (pass.isBlank()) {
 					System.out.println("No puede tener una contraseña vacío.");
 					pass = leerString("Dame tu nueva contraseña: ");
 				}
@@ -153,29 +154,26 @@ public class Main {
 				usuario = new Premiun(login, pass);
 
 				instruccion = conexion.createStatement();
-				resultado = instruccion.executeQuery("SELECT * FROM USUARIO WHERE LOGIN = (" + login + ")");
+				resultado = instruccion.executeQuery("SELECT COUNT(*) FROM USUARIO WHERE LOGIN = '" + login + "'");
+				resultado.next();
 
-				if (resultado.getString("LOGIN").equals(login) && resultado.getInt("NUMEROIMAGENES") != -1) {// comprobar
-																												// como
-																												// arriba,
-																												// comprobar
-																												// si
-																												// NUMEROIMAGENES
-																												// es
-																												// correcto
-					usuario = new Premiun(resultado.getString("LOGIN"), resultado.getString("LOGIN"));
-					System.out.println("Logueado correctamente. Usuario premiun.");
-				} else if (resultado.getString("LOGIN").equals(login) && resultado.getInt("NUMEROIMAGENES") == -1) {// comprobar
-																													// como
-																													// arriba,
-																													// comprobar
-																													// si
-																													// NUMEROIMAGENES
-																													// es
-																													// correcto
-					usuario = new Free(resultado.getString("LOGIN"), resultado.getString("LOGIN"));
-					System.out.println("Logueado correctamente. Usuario Free.");
+				if (resultado.getInt(1) == 0) {
+					System.out.println("Este usuario no existe");
+				} else {
+					instruccion = conexion.createStatement();
+					resultado = instruccion.executeQuery("SELECT * FROM USUARIO WHERE LOGIN = '" + login + "'");
+					resultado.next();
 
+					if (resultado.getString("LOGIN").equals(login) && resultado.getInt("NUMEROIMAGENES") != -1) {
+
+						usuario = new Premiun(resultado.getString("LOGIN"), resultado.getString("LOGIN"));
+						System.out.println("Logueado correctamente. Usuario premiun.");
+					} else if (resultado.getString("LOGIN").equals(login) && resultado.getInt("NUMEROIMAGENES") == -1) {
+
+						usuario = new Free(resultado.getString("LOGIN"), resultado.getString("LOGIN"));
+						System.out.println("Logueado correctamente. Usuario Free.");
+
+					}
 				}
 
 				break;
@@ -186,7 +184,8 @@ public class Main {
 				} else {
 					instruccion = conexion.createStatement();
 					resultado = instruccion
-							.executeQuery("SELECT * FROM USUARIO WHERE LOGIN = (" + usuario.getLogin() + ")");
+							.executeQuery("SELECT * FROM USUARIO WHERE LOGIN = '" + usuario.getLogin() + "'");
+					resultado.next();
 
 					String passOld = leerString("Introduce la contraseña antigua: ");
 
@@ -198,47 +197,52 @@ public class Main {
 
 							} else {
 								salir = true;
-								
-								
+
 								instruccion = conexion.createStatement();
-								resultado = instruccion
-										.executeQuery("UPDATE USUARIO SET PASS = '" + passNew + "' WHERE LOGIN = '"+ usuario.getLogin() + "'");
-								
-								
-								if(resultado.getInt("NUMEROIMAGENES")==-1){//COMPROBAR QUE SE ESCRIBE ASI NUMERO IMAGENES
+								resultado = instruccion.executeQuery("UPDATE USUARIO SET PASS = '" + passNew
+										+ "' WHERE LOGIN = '" + usuario.getLogin() + "'");
+
+								instruccion = conexion.createStatement();
+								resultado = instruccion.executeQuery(
+										"SELECT * FROM USUARIO WHERE LOGIN = '" + usuario.getLogin() + "'");
+								resultado.next();
+
+								if (resultado.getInt("NUMEROIMAGENES") == -1) {
+																				
 									boolean encontrado = false;
-									
+
 									Iterator<Free> siguiente = frees.iterator();
 									while (siguiente.hasNext() && !encontrado) {
 										Free fre = siguiente.next();
 										if (usuario.equals(fre)) {
 											encontrado = true;
 											fre.setPass(passNew);
+											System.out.println("Contraseña cambiada");
 
 										}
-						
+
 									}
-									
-								}
-								else if(resultado.getInt("NUMEROIMAGENES")!=-1){//COMPROBAR QUE SE ESCRIBE ASI NUMERO IMAGENES
+
+								} else if (resultado.getInt("NUMEROIMAGENES") != -1) {
+																						
 									boolean encontrado = false;
-									
+
 									Iterator<Premiun> siguiente = premiuns.iterator();
 									while (siguiente.hasNext() && !encontrado) {
 										Premiun pre = siguiente.next();
 										if (usuario.equals(pre)) {
 											encontrado = true;
 											pre.setPass(passNew);
+											System.out.println("Contraseña cambiada");
 
 										}
-						
+
 									}
-									
+
 								}
-								
+
 							}
-								
-								
+
 						} while (!salir);
 
 					}
@@ -248,14 +252,70 @@ public class Main {
 				break;
 			case 4:// Borrar Cuenta
 
+				if (usuario == null) {
+					System.out.println("Debes registrarte");
+				} else {
+					String afirmar = leerString("¿Estas seguro que quieres borrar tu cuenta?(SI/NO)").toUpperCase();
+
+					if (afirmar.equals("SI")) {
+
+						instruccion = conexion.createStatement();
+						resultado = instruccion
+								.executeQuery("SELECT * FROM USUARIO WHERE LOGIN = '" + usuario.getLogin() + "'");
+						resultado.next();
+
+						if (resultado.getInt("NUMEROIMAGENES") == -1) {
+							boolean encontrado = false;
+
+							Iterator<Free> siguiente = frees.iterator();
+							while (siguiente.hasNext() && !encontrado) {
+								Free fre = siguiente.next();
+								if (usuario.equals(fre)) {
+									encontrado = true;
+									frees.remove(fre);
+
+									instruccion = conexion.createStatement();
+									instruccion.executeQuery(
+											"DELETE FROM USUARIO WHERE LOGIN = '" + usuario.getLogin() + "'");
+									System.out.println("Cuenta borrada");
+									usuario = null;
+
+								}
+
+							}
+
+						} else if (resultado.getInt("NUMEROIMAGENES") != -1) {
+							boolean encontrado = false;
+
+							Iterator<Premiun> siguiente = premiuns.iterator();
+							while (siguiente.hasNext() && !encontrado) {
+								Premiun pre = siguiente.next();
+								if (usuario.equals(pre)) {
+									encontrado = true;
+									premiuns.remove(pre);
+
+									instruccion = conexion.createStatement();
+									resultado = instruccion.executeQuery(
+											"DELETE FROM USUARIO WHERE LOGIN = '" + usuario.getLogin() + "'");
+									System.out.println("Cuenta borrada");
+									usuario = null;
+
+								}
+
+							}
+
+						}
+					}
+				}
+
 				break;
 
 			case 5:// Ver que cuenta hay actualmente
 
 				if (usuario == null) {
-					System.out.println("No hay ninguna cuenta asociada.");
+					System.out.println("No hay ninguna cuenta asociada.\n");
 				} else {
-					System.out.println("Usuario: " + usuario.getLogin());
+					System.out.println("Usuario: " + usuario.getLogin() + "\n");
 				}
 
 				break;
@@ -290,14 +350,14 @@ public class Main {
 
 				instruccion = conexion.createStatement();
 				resultado = instruccion.executeQuery("SELECT * FROM USUARIO WHERE NUMEROIMAGENES =-1");
-				System.out.println("Free\n");
+				System.out.println("\nFree\n");
 				while (resultado.next()) {
 					Free f = new Free(resultado.getString("LOGIN"), resultado.getString("PASS"));
 					System.out.println(f.toString());
 
 				}
 
-				System.out.println("Premiun\n");
+				System.out.println("\nPremiun\n");
 				instruccion = conexion.createStatement();
 				resultado = instruccion.executeQuery("SELECT * FROM USUARIO WHERE NUMEROIMAGENES !=-1");
 				while (resultado.next()) {
@@ -306,6 +366,9 @@ public class Main {
 
 				}
 
+				break;
+			case 9:
+				System.out.println("Vuelva pronto.");
 				break;
 
 			default:
@@ -317,42 +380,21 @@ public class Main {
 
 //			"1.Registrarse"
 //			+ "\n2.Login"
-//			+ "\n3.Hacerse Preimun"
-//			+ "\n4.Buscar foto"
-//			+ "\n5.Salir");
+//			+ "\n3.Modifica Contraseña"
+//			+ "\n4.Borrar Cuenta"
+//			+ "\n5.Ver que cuenta hay actualmente"
+//			+ "\n6.Listar usuarios premiun"
+//			+ "\n7.Listar usuarios free"
+//			+ "\n8.Listar todos los usuarios"
+//			+ "\n9.Salir");
 
-		// ******************************************+
-
-//		String pagado = leerString("¿Has pagado la inscripcion? (SI/NO)").toUpperCase();
-//		if (tipo_cuenta == -1)
-//			System.out.println("No estas logueado");
-//		else if (pagado == "SI" && tipo_cuenta == 1) {
-//			System.out.println("Ya tienes la cuenta premiun.");
-//		} else if (pagado == "SI" && tipo_cuenta == 0) {
-//			tipo_cuenta = 1;
-//			p.setLogin(f.getLogin());
-//			p.setPass(f.getPass());
-//
-//			boolean encontrado = false;
-//			Iterator<Free> siguiente = frees.iterator();
-//			while (siguiente.hasNext() && !encontrado) {
-//				Free fre = siguiente.next();
-//				if (f.equals(fre)) {
-//					encontrado = true;
-//					frees.remove(fre);
-//				}
-//
-//			}
-//			if (encontrado) {
-//				premiuns.add(p);
-//			}
-//
-//		}
 		conexion.close();
 	}
 
 	public static void menu() {
-		System.out.println("1.Registrarse" + "\n2.Login" + "\n3.Hacerse Preimun" + "\n4.Buscar foto" + "\n5.Salir");
+		System.out.println("1.Registrarse" + "\n2.Login" + "\n3.Modifica Contraseña" + "\n4.Borrar Cuenta"
+				+ "\n5.Ver que cuenta hay actualmente" + "\n6.Listar usuarios premiun" + "\n7.Listar usuarios free"
+				+ "\n8.Listar todos los usuarios" + "\n9.Salir");
 	}
 
 	public static int leerInt(String texto) {
@@ -370,7 +412,4 @@ public class Main {
 		return teclado.nextLine().charAt(0);
 	}
 
-	public static void addUsuario(Usuario usuario) {
-
-	}
 }

@@ -111,7 +111,7 @@ public class Premiun extends Usuario {
 
 	@Override
 	public String toString() {
-		return "Premiun [numeroImagenesPublicadas=" + numeroImagenesPublicadas + ", " + super.toString()
+		return "Usuario Premiun: ImagenesPublicadas=" + numeroImagenesPublicadas + ", " + super.toString()
 				+ "]";
 	}
 	
