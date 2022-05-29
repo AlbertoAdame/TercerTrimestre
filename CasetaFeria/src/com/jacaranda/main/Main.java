@@ -37,7 +37,7 @@ public class Main {
 				String calle = leerString("Dame el nombre de la calle: ").toUpperCase();
 				for (Calle c : calles) {
 					if (c.getCalle().equalsIgnoreCase(calle))
-						System.out.println(c);
+						System.out.println(c.mostrarTodasCasetas());
 				}
 				break;
 			}
@@ -87,7 +87,7 @@ public class Main {
 			case 7: {// 7. Eliminar una caseta
 				String idCaseta = leerString("Dame el id de la caseta: ");
 
-				Caseta ca = new Caseta(null, null, null, null, idCaseta);
+				Caseta ca = new Caseta(null, null, null, null, idCaseta, null);
 
 				boolean encontrado = false;
 				Iterator<Calle> siguiente = calles.iterator();
@@ -238,20 +238,20 @@ public class Main {
 
 //					System.out.println("\n");
 
-					c = new Calle(calle, numero, idCalle);
-					if(!calles.contains(c)) {
+					c = new Calle(calle, idCalle);
+					if (!calles.contains(c)) {
 						calles.add(c);
+//						System.out.println(c.toString());
 					}
-					
-					ca = new Caseta(titulo, modulos, clase, entidad, id);
-					for(Calle cal : calles) {
-						if(cal.getIdCalle().equals(idCalle))
-							c.addCaseta(ca);
-					}
-					
 
-					
-					
+					ca = new Caseta(titulo, modulos, clase, entidad, id, numero);
+					for (Calle cal : calles) {
+						if (cal.getIdCalle().equals(idCalle)) {
+							cal.addCaseta(ca);
+//							System.out.println(ca.toString());
+						}
+
+					}
 
 				}
 

@@ -13,9 +13,23 @@ public class Datos {
 	}
 
 
+	public int getAno() {
+		return ano;
+	}
+
+	public int getDato() {
+		return dato;
+	}
+
+
+	public void setDato(int dato) {
+		this.dato = dato;
+	}
+
+
 	@Override
 	public String toString() {
-		return "Datos [ano=" + ano + ", dato=" + dato + "]";
+		return "año=" + ano + ", dato=" + dato;
 	}
 	
 	

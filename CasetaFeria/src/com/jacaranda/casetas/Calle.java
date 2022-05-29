@@ -8,14 +8,12 @@ import java.util.Objects;
 public class Calle {
 
 	private String nombre;
-	private String numero;
 	private String idCalle;
 	private List<Caseta> casetas;
 
-	public Calle(String nombre, String numero, String idCalle) {
+	public Calle(String nombre, String idCalle) {
 		super();
 		this.nombre = nombre;
-		this.numero = numero;
 		this.idCalle = idCalle;
 		this.casetas = new ArrayList<>();
 	}
@@ -24,9 +22,6 @@ public class Calle {
 		return nombre;
 	}
 
-	public String getNumero() {
-		return numero;
-	}
 
 	public String getIdCalle() {
 		return idCalle;
@@ -49,9 +44,11 @@ public class Calle {
 		return Objects.equals(nombre, other.nombre);
 	}
 
+	
+
 	@Override
 	public String toString() {
-		return "Calle " + nombre + ", numero " + numero + "\n";
+		return "Calle [nombre=" + nombre +  ", idCalle=" + idCalle + "]";
 	}
 
 	public String casetasFamiliares() {
@@ -128,11 +125,22 @@ public class Calle {
 
 	}
 
-	public String mostrarTodasCasetasPrueba() {
+	public String mostrarTodasCasetas() {
 		StringBuilder resultado = new StringBuilder();
 		for (Caseta c : casetas) {
 			resultado.append("\n" + c.toString());
 		}
+		return resultado.toString();
+	}
+	
+	public String mostrarCasetasNombre(String nombre) {
+		StringBuilder resultado = new StringBuilder();
+		if(this.nombre.equals(nombre)) {
+			for (Caseta c : casetas) {
+				resultado.append("\n" + c.toString());
+			}
+		}
+		
 		return resultado.toString();
 	}
 
